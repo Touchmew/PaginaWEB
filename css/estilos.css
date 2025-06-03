@@ -1,5 +1,346 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Unica One', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: linear-gradient(135deg, #1a3147, #4a5d7a, #8a9ba8, #e0e6ed);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 150px;
+    float: left;
+    margin-right: -1000px;
+    margin-left: 100px;
+}
+
+h1 {
+    font-family: 'Unica One', sans-serif;
+}
+
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #1a3147;
+    font-family: 'Lora', serif;
+}
+
+.navbar {
+    margin-top: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: opacity 0.3s;
+}
+
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+.section {
+    padding: 10px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #4a5d7a;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    width: 100%;
+    max-width: 350px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+.card p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    background: #1a3147;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.35s;
+}
+
+.btn:hover {
+    background: #2e7d32;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.social-links {
+    margin: 20px;
+}
+
+.social-icon {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    color: #cccccc;
+}
+
+.copyright {
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* Estilos para el modo oscuro */
+body.ModoOscuro {
+    background-color: #333;
+    color: #fff;
+}
+
+.header.ModoOscuro {
+    background: linear-gradient(135deg, #000000, #0f1113, #1d2125, #2c3238, #3b434a,  #4a545d, #586470, #677582, #768695, #8496a7, #93a7ba
+    );
+    color: #ffffff;
+}
+
+.header.ModoOscuro a {
+    color: #8496a7;
+}
+
+.header.ModoOscuro .highlight {
+    color: #efb810;
+}
+
+.header.ModoOscuro .btn {
+    background-color: #586470;
+    color: #ffffff;
+}
+
+.footer.ModoOscuro {
+    background: #222;
+}
+
+.card.ModoOscuro {
+    background: #444;
+}
+
+.card.ModoOscuro h3,
+.card.ModoOscuro p {
+    color: #fff;
+}
+
+.section h2.ModoOscuro {
+    color: #efb810;
+}
+
+.btn.ModoOscuro:hover {
+    background-color: #efb810; 
+    color: #333; 
+}
+
+.header.ModoOscuro .navbar .dia-noche {
+    color: #2c3238 !important;
+}
+
+/*boton */
+.dia-noche {
+    color: #4a545d !important;
+    transition: color 0.35s;
+}
+
+.linea {
+    height: 1px;
+    background-color: white;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/*Alva */
+.section, .models-section {
+    padding: 40px;
+    text-align: center;
+}
+
+
+
+/* Daniel */
+.promociones-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.promociones-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.promociones-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.promo-card {
+    position: relative;
+    flex: 1 1 400px;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.promo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.promo-content {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 20px;
+}
+
+.promo-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+.promo-content p {
+    margin: 0 0 15px 0;
+}
+
+.promo-content .btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.Cartel {
+    width: 100%;
+    height: 100vh; 
+    display: flex; 
+    
+    justify-content: center; 
+    overflow: hidden; 
+}
+
+.Cartel-img {
+    max-width: 100%;
+    height: auto;
+}
+/* almi*/
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.bloque {
+    flex: 1 1 200px;
+    max-width: 220px;
+    text-align: center;
+    padding: 10px;
+}
+
+.bloque i {
+    font-size: 40px;
+    color: #264767;
+    margin-bottom: 10px;
+}
+
+.bloque h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.bloque p {
+    font-size: 14px;
+    color: #333;
+}
+
+.bloque.ModoOscuro h3,
+.bloque.ModoOscuro p,
+.bloque.ModoOscuro i {
+    color: #FFFFFF;
 }
