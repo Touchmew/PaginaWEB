@@ -256,8 +256,8 @@
         buttons.forEach(button => button.classList.toggle('ModoOscuro'));
 
         this.innerHTML = document.body.classList.contains('ModoOscuro')
-            ? '<i class="fa fa-sun-o"></i>'
-            : '<i class="fa fa-moon-o"></i>';
+            ? '<img src=Img/sol.png width="25px" height="25px">'
+            : '<img src=Img/Luna.png width="20px" height="20px">';
     });
 
     // Botones de modelo de auto
@@ -277,9 +277,8 @@
 
     // Carrusel de imágenes promocionales
     const imagenes = [
-        "Img/cartel.png",
-        "Img/cartel1.png",
-        "Img/cartel2.png"
+        "Img/cartel.jpg",
+        "Img/cartel2.webp"
     ];
     let indice = 0;
 
