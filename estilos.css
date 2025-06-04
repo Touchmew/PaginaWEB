@@ -224,6 +224,21 @@ body.ModoOscuro {
     margin: 20px 0;
     width: 100%;
 }
+.cartel {
+    width: auto;
+    height: 400px; 
+    overflow: hidden; 
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+}
+
+.cartel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
 
 /*Alva */
 .section, .models-section {
