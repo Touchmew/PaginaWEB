@@ -216,47 +216,56 @@
     </footer>
     <!-- SCRIPT -->
     <script>
-        document
-            .querySelector('#botonModoOscuro')
-            .addEventListener('click', function () {
-                document.body.classList.toggle('ModoOscuro');
-                const header = document.querySelector('.header');
-                const footer = document.querySelector('.footer');
-                const bloques  = document.querySelectorAll('.bloque');
-                const headings = document.querySelectorAll('.section h2');
-                const buttons = document.querySelectorAll('.btn');
+    // Botón modo oscuro
+    document.querySelector('#botonModoOscuro').addEventListener('click', function () {
+        document.body.classList.toggle('ModoOscuro');
 
-                header.classList.toggle('ModoOscuro');
-                footer.classList.toggle('ModoOscuro');
-                bloques.forEach((card) => card.classList.toggle('ModoOscuro'));
-                headings.forEach((heading) => heading.classList.toggle('ModoOscuro'));
-                buttons.forEach((button) => button.classList.toggle('ModoOscuro'));
+        const header = document.querySelector('.header');
+        const footer = document.querySelector('.footer');
+        const bloques = document.querySelectorAll('.bloque');
+        const headings = document.querySelectorAll('.section h2');
+        const buttons = document.querySelectorAll('.btn');
 
-                if (document.body.classList.contains('ModoOscuro')) {
-                    this.innerHTML = '<p>Sol</p>';
-                } else {
-                    this.innerHTML = '<p>Noche</p>';
-                }
-            });
-        document.querySelectorAll('.model-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-        document.getElementById('car-name').textContent = this.getAttribute('data-name');
-        document.getElementById('car-price').textContent = this.getAttribute('data-price');
-        document.getElementById('car-img').src = this.getAttribute('data-img');
-        document.getElementById('car-img').alt = this.getAttribute('data-name');
-      });
+        header.classList.toggle('ModoOscuro');
+        footer.classList.toggle('ModoOscuro');
+        bloques.forEach(card => card.classList.toggle('ModoOscuro'));
+        headings.forEach(heading => heading.classList.toggle('ModoOscuro'));
+        buttons.forEach(button => button.classList.toggle('ModoOscuro'));
+
+        this.innerHTML = document.body.classList.contains('ModoOscuro')
+            ? '<i class="fa fa-sun-o"></i>'
+            : '<i class="fa fa-moon-o"></i>';
     });
-        const imagenes = [
-            "Img/cartel.png",
-            "Img/cartel1.png",
-            "Img/cartel2.png"
-        ];
-        let indice = 0;
-        function cambiarImagen() {
-            indice = (indice + 1) % imagenes.length; 
-            document.getElementById("promocion").src = imagenes[indice]; 
-        }
-         setInterval(cambiarImagen, 3000);
+
+    // Botones de modelo de auto
+    document.querySelectorAll('.model-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const name = btn.getAttribute('data-name');
+            const price = btn.getAttribute('data-price');
+            const img = btn.getAttribute('data-img');
+
+            document.querySelector('#car-name').textContent = name;
+            document.querySelector('#car-price').textContent = price;
+            const carImg = document.querySelector('#car-img');
+            carImg.src = img;
+            carImg.alt = name;
+        });
+    });
+
+    // Carrusel de imágenes promocionales
+    const imagenes = [
+        "Img/cartel.png",
+        "Img/cartel1.png",
+        "Img/cartel2.png"
+    ];
+    let indice = 0;
+
+    const cambiarImagen = () => {
+        indice = (indice + 1) % imagenes.length;
+        document.querySelector('#promocion').src = imagenes[indice];
+    };
+
+    setInterval(cambiarImagen, 3000);
     </script>
 </body>
 </html>
