@@ -310,18 +310,22 @@ body.ModoOscuro {
 /* almi*/
 .contenedor {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px;
-    padding: 20px;
+    gap: 15px;
+    padding: 10px;
 }
 
 .bloque {
     flex: 1 1 200px;
     max-width: 220px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
     text-align: center;
-    padding: 10px;
 }
+
 
 .bloque i {
     font-size: 40px;
@@ -330,12 +334,31 @@ body.ModoOscuro {
 }
 
 .bloque h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin: 10px 0;
+    list-style: none;
+    padding: 0;
+    color: #555;
+}
+.producto-precio {
+    font-size: 20px;
+  background-color: #908D8C; 
+  font-weight: bold;
+  border-radius: 10px; 
+  color: white; 
+  margin-top: 10px;
+  text-decoration: none;
+  padding: 12px 24px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.35s, transform 0.2s;
+}
+button:hover {
+  background-color: #A49F9E; 
+  transform: scale(1.05); 
 }
 
 .bloque p {
-    font-size: 14px;
+    font-size: 20px;
     color: #333;
 }
 
@@ -343,4 +366,9 @@ body.ModoOscuro {
 .bloque.ModoOscuro p,
 .bloque.ModoOscuro i {
     color: #FFFFFF;
+}
+.producto-imagen {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
