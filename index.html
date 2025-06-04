@@ -25,7 +25,7 @@
                 <a href="#Colecion">Colecciones</a>
                 <a href="#contacto">Contacto</a>
                 <a id="botonModoOscuro" class="dia-noche" href="javascript:void(0);">
-                    <i class="fa fa-moon-o"></i>
+                    <p>Noche</p>
                 </a>
             </nav>
         </div>
@@ -233,9 +233,9 @@
                 buttons.forEach((button) => button.classList.toggle('ModoOscuro'));
 
                 if (document.body.classList.contains('ModoOscuro')) {
-                    this.innerHTML = '<i class="fa fa-sun-o"></i>';
+                    this.innerHTML = '<p>Sol</p>';
                 } else {
-                    this.innerHTML = '<i class="fa fa-moon-o"></i>';
+                    this.innerHTML = '<p>Noche</p>';
                 }
             });
         document.querySelectorAll('.model-btn').forEach(btn => {
@@ -259,3 +259,4 @@
          setInterval(cambiarImagen, 3000);
     </script>
 </body>
+</html>
