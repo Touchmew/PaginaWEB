@@ -234,79 +234,89 @@ body.ModoOscuro {
 
 
 /* Daniel */
-.promociones-section {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
+.destacados-section {
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.promociones-section h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+  width: 100vw;
 }
 
-.promociones-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+.destacado-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0; /* Elimina bordes para ocupar todo */
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.promo-card {
-    position: relative;
-    flex: 1 1 400px;
-    max-width: 600px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.destacado-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
 }
 
-.promo-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+.destacado-card .text-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  text-align: left;
+  z-index: 2;
 }
 
-.promo-content {
-    position: absolute;
-    bottom: 0;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    padding: 20px;
+.destacado-card h3 {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
-.promo-content h3 {
-    font-size: 1.5rem;
-    margin: 0 0 10px 0;
+.destacado-card h3 span {
+  font-weight: bold;
+  color: #f0f;
 }
 
-.promo-content p {
-    margin: 0 0 15px 0;
+.destacado-card p {
+  margin: 10px 0;
+  font-size: 0.9rem;
 }
 
-.promo-content .btn {
-    background-color: #0066cc;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 6px;
+.btn-white, .btn-green {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.Cartel {
-    width: 100%;
-    height: 100vh; 
-    display: flex; 
-    
-    justify-content: center; 
-    overflow: hidden; 
+.btn-white {
+  background-color: #fff;
+  color: #000;
 }
 
-.Cartel-img {
-    max-width: 100%;
-    height: auto;
+.btn-green {
+  background-color: #00ff99;
+  color: #000;
 }
+
+.btn-white:hover,
+.btn-green:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #fff;
+}
+
 /* almi*/
 .contenedor {
     display: flex;
