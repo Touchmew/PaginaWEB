@@ -8,7 +8,7 @@
 <body>
     <!-- Encabezado -->
     <header class="header">
-        <img src="Img/logo.png" class="logo" >
+        <img src="img/logo.png" class="logo" >
         <div class="container">
             <h1>Tecnologias <span class="highlight">TechMart</span></h1>
             <nav class="navbar">
@@ -17,16 +17,16 @@
                 <a href="#Colecion">Colecciones</a>
                 <a href="#Graficas">Graficas</a>
                 <a id="botonModoOscuro" class="dia-noche">
-                    <img src=Img/Luna.png width="20px" height="20px">
+                    <img src=img/Luna.png width="20px" height="20px">
                 </a>
-                <a href="#"><img src="Img/Compra.png"  width="20px" height="20px"></a>
+                <a href="#"><img src="img/Compra.png"  width="20px" height="20px"></a>
             </nav>
         </div>
     </header>
 
     <!-- Sección de Promoción -->
     <section class="cartel">
-        <img id="promocion" src="Img/cartel.jpg" alt="cartel de promocion"/>
+        <img id="promocion" src="img/cartel.jpg" alt="cartel de promocion"/>
     </section>
 
     <!-- Sección Principal -->
@@ -38,7 +38,7 @@
                 <h2>Combos de Infarto</h2>
                 <div class="card-container">
                     <div class="card">
-                        <img src="Img/cas1.jpg" alt="Proyecto 1">
+                        <img src="img/cas1.jpg" alt="Proyecto 1">
                         <div class="card-content">
                             <h3>PcCom Ready Intel i5</h3>
                             <p>32 GB RAM / 1TB SSD / RTX 4060.</p>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="Img/amd1.jpg" alt="Proyecto 2">
+                        <img src="img/amd1.jpg" alt="Proyecto 2">
                         <div class="card-content">
                             <h3>ZOTAC RTX 5060 Ti</h3>
                             <p>16 GB GDDR7 / DLSS4 / Reflex 2 RTX AI.</p>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="Img/titan.jpg" alt="Proyecto 3">
+                        <img src="img/titan.jpg" alt="Proyecto 3">
                         <div class="card-content">
                             <h3>Titan 18 HX AI A2XW</h3>
                             <p>(Procesador Intel® Core™ Ultra / 16GB / 1TB SSD / GeForce RTX™ Serie 50).</p>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="Img/board.png" alt="Proyecto 4">
+                        <img src="img/board.png" alt="Proyecto 4">
                         <div class="card-content">
                             <h3>MPG B550 GAMING PLUS</h3>
                             <p>pprocesadores 3ra Gen AMD Ryzen™ con actualización de BIOS Soporta memoria DDR4</p>
@@ -81,7 +81,7 @@
         <section id="Colecion" class="section destacados-section">
             <div class="container-grid">
                 <div class="destacado-card auricular">
-                    <img src="Img/audifono.webp" alt="Audífono Gamer">
+                    <img src="img/audifono.webp" alt="Audífono Gamer">
                     <div class="text-content">
                         <h3>Audífono <span>Shake</span></h3>
                         <p><i class="fa fa-headphones"></i> Almohadillas | <i class="fa fa-music"></i> Estéreo 7.1</p>
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="destacado-card teclados">
-                    <img src="Img/teclado.webp" alt="Teclados RGB">
+                    <img src="img/teclado.webp" alt="Teclados RGB">
                     <div class="text-content">
                         <h3>Encuentra tu <span>Tamaño Perfecto</span></h3>
                         <p>Teclados 100% | 70% | 60%</p>
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="destacado-card mouse">
-                    <img src="Img/Mouse.webp" alt="Mouse Gamer">
+                    <img src="img/Mouse.webp" alt="Mouse Gamer">
                     <div class="text-content">
                         <h3>Mouse <span>Aurora</span></h3>
                         <p>Púrpura | Azul Polar | Verde Boreal</p>
@@ -108,7 +108,7 @@
                 </div>
 
                 <div class="destacado-card accesorios">
-                    <img src="Img/accesorios.webp" alt="Accesorios Gamer">
+                    <img src="img/accesorios.webp" alt="Accesorios Gamer">
                     <div class="text-content">
                         <h3>Accesorios</h3>
                         <p>Complementa tus periféricos</p>
@@ -213,8 +213,8 @@
             buttons.forEach(button => button.classList.toggle('ModoOscuro'));
 
             this.innerHTML = document.body.classList.contains('ModoOscuro')
-                ? '<img src=Img/sol.png width="25px" height="25px">'
-                : '<img src=Img/Luna.png width="20px" height="20px">';
+                ? '<img src=img/sol.png width="25px" height="25px">'
+                : '<img src=img/Luna.png width="20px" height="20px">';
         });
 
 
