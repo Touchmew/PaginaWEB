@@ -1,401 +1,451 @@
+/* Estilos generales para el cuerpo */
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Unica One', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    box-sizing: border-box; /* Incluye padding y borde en el cálculo de ancho y alto */
+    font-family: 'Unica One', sans-serif; /* Fuente principal */
+    line-height: 1.6; /* Altura de línea para mejorar legibilidad */
+    color: #333; /* Color del texto */
+    background-color: #fff; /* Color de fondo */
 }
 
+/* Contenedor principal para centrar el contenido */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 90%; /* Ancho del contenedor */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espaciado interno */
 }
 
+/* Estilos para el encabezado */
 .header {
-    background: linear-gradient(135deg, #1a3147, #4a5d7a, #8a9ba8, #e0e6ed);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
+    background: linear-gradient(135deg, #1a3147, #4a5d7a, #8a9ba8, #e0e6ed); /* Fondo con degradado */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    padding: 10px 0; /* Espaciado interno */
+    position: relative; /* Posición relativa para elementos hijos */
 }
 
+/* Estilo del título principal en el encabezado */
 .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Margen inferior */
 }
 
+/* Estilo del logo */
 .logo {
-    width: 150px;
-    float: left;
-    margin-right: -1000px;
-    margin-left: 100px;
+    width: 150px; /* Ancho del logo */
+    float: left; /* Flota a la izquierda */
+    margin-right: -1000px; /* Ajusta la posición */
+    margin-left: 100px; /* Margen izquierdo */
 }
 
+/* Estilo de los encabezados */
 h1 {
-    font-family: 'Unica One', sans-serif;
+    font-family: 'Unica One', sans-serif; /* Fuente específica */
 }
 
 h2,
 h3 {
-    font-family: 'Lora', serif;
-    font-weight: 600;
+    font-family: 'Lora', serif; /* Fuente serif para subencabezados */
+    font-weight: 600; /* Peso de la fuente */
 }
 
+/* Estilo para resaltar texto */
 .highlight {
-    color: #1a3147;
-    font-family: 'Lora', serif;
+    color: #1a3147; /* Color del texto resaltado */
+    font-family: 'Lora', serif; /* Fuente específica */
 }
 
+/* Estilos para la barra de navegación */
 .navbar {
-    margin-top: 20px;
+    margin-top: 20px; /* Margen superior */
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1rem;
-    transition: opacity 0.3s;
+    color: white; /* Color del texto en los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 15px; /* Margen horizontal */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    transition: opacity 0.3s; /* Transición suave para el efecto hover */
 }
 
 .navbar a:hover {
-    opacity: 0.8;
+    opacity: 0.8; /* Efecto hover que reduce la opacidad */
 }
 
+/* Estilos para secciones */
 .section {
-    padding: 10px 0;
+    padding: 10px 0; /* Espaciado vertical */
 }
 
 .section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    color: #4a5d7a;
+    text-align: center; /* Centra el texto */
+    margin-bottom: 40px; /* Margen inferior */
+    font-size: 2rem; /* Tamaño de fuente */
+    color: #4a5d7a; /* Color del texto */
 }
 
+/* Contenedor de tarjetas */
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    display: flex; /* Flexbox para alinear elementos */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a múltiples líneas */
+    justify-content: center; /* Centra las tarjetas */
+    gap: 30px; /* Espacio entre tarjetas */
 }
 
+/* Estilos para cada tarjeta */
 .card {
-    width: 100%;
-    max-width: 250px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ancho completo */
+    max-width: 250px; /* Ancho máximo */
+    background: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición para efectos hover */
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Eleva la tarjeta al pasar el mouse */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
 }
 
+/* Estilos para imágenes dentro de tarjetas */
 .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%; /* Ancho completo */
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Cubre el área sin distorsionar */
 }
 
+/* Contenido dentro de la tarjeta */
 .card-content {
-    padding: 10px;
+    padding: 10px; /* Espaciado interno */
 }
 
+/* Estilos para títulos y párrafos dentro de tarjetas */
 .card h3 {
-    margin-bottom: 10px;
-    color: #3b434a;
+    margin-bottom: 10px; /* Margen inferior */
+    color: #3b434a; /* Color del texto */
 }
 
 .card p {
-    margin-bottom: 15px;
-    color: #666;
+    margin-bottom: 15px; /* Margen inferior */
+    color: #666; /* Color del texto */
 }
 
+/* Estilos para botones */
 .btn {
-    display: inline-block;
-    background: #1a3147;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.35s;
+    display: inline-block; /* Botón en línea */
+    background: #1a3147; /* Fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    transition: background 0.35s; /* Transición para el efecto hover */
 }
 
 .btn:hover {
-    background: linear-gradient(90deg, #5f2eea, #8f00ff, #15d8a7, #00fff7);
+    background: linear-gradient(90deg, #5f2eea, #8f00ff, #15d8a7, #00fff7); /* Degradado en hover */
 }
 
+/* Estilos para el pie de página */
 .footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 40px;
-    font-size: 14px;
-     position: relative;
+    background: #333; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    padding: 10px 0; /* Espaciado interno */
+    margin-top: 40px; /* Margen superior */
+    font-size: 14px; /* Tamaño de fuente */
+    position: relative; /* Posición relativa para elementos hijos */
 }
 
+/* Estilo para los textos de copyright */
 .copyright {
-    margin-top: 20px;
-    opacity: 0.8;
+    margin-top: 20px; /* Margen superior */
+    opacity: 0.8; /* Opacidad para suavizar el texto */
 }
 
 /* Estilos para el modo oscuro */
 body.ModoOscuro {
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Color del texto */
 }
 
 .header.ModoOscuro {
-    background: linear-gradient(135deg, #000000, #0f1113, #1d2125, #2c3238, #3b434a,  #4a545d, #586470, #677582, #768695, #8496a7, #93a7ba
-    );
-    color: #ffffff;
+    background: linear-gradient(135deg, #000000, #0f1113, #1d2125, #2c3238, #3b434a, #4a545d, #586470, #677582, #768695, #8496a7, #93a7ba); /* Degradado oscuro */
+    color: #ffffff; /* Color del texto */
 }
 
 .header.ModoOscuro a {
-    color: #8496a7;
+    color: #8496a7; /* Color de enlaces en modo oscuro */
 }
 
 .header.ModoOscuro .highlight {
-    background: linear-gradient(90deg, #5f2eea, #8f00ff, #15d8a7, #00fff7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #5f2eea, #8f00ff, #15d8a7, #00fff7); /* Degradado para texto resaltado */
+    -webkit-background-clip: text; /* Clip para fondo en texto */
+    -webkit-text-fill-color: transparent; /* Relleno de texto transparente */
 }
 
 .header.ModoOscuro .btn {
-    background-color: #586470;
-    color: #ffffff;
+    background-color: #586470; /* Fondo de botones en modo oscuro */
+    color: #ffffff; /* Color del texto de botones */
 }
 
 .footer.ModoOscuro {
-    background: #222;
+    background: #222; /* Fondo del pie en modo oscuro */
 }
 
 .card.ModoOscuro {
-    background: #444;
+    background: #444; /* Fondo de tarjetas en modo oscuro */
 }
 
 .card.ModoOscuro h3,
 .card.ModoOscuro p {
-    color: #B5B5B5;
+    color: #B5B5B5; /* Color de texto en tarjetas en modo oscuro */
 }
 
 .section h2.ModoOscuro {
-    background: linear-gradient(90deg, #5f2eea, #8f00ff, #15d8a7, #00fff7);
-     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #5f2eea, #8f00ff, #15d8a7, #00fff7); /* Degradado para encabezados en modo oscuro */
+    -webkit-background-clip: text; /* Clip para fondo en texto */
+    -webkit-text-fill-color: transparent; /* Relleno de texto transparente */
 }
 
 .header.ModoOscuro .navbar .dia-noche {
-    color: #2c3238 !important;
+    color: #2c3238 !important; /* Color del icono de modo oscuro */
 }
 
-/*boton */
+/* Estilo para el botón de modo oscuro */
 .dia-noche {
-    color: #4a545d !important;
-    transition: color 0.35s;
+    color: #4a545d !important; /* Color del icono */
+    transition: color 0.35s; /* Transición de color */
 }
 
+/* Línea separadora en el pie de página */
 .linea {
-    height: 1px;
-    background-color: white;
-    margin: 20px 0;
-    width: 100%;
+    height: 1px; /* Altura de la línea */
+    background-color: white; /* Color de la línea */
+    margin: 20px 0; /* Margen vertical */
+    width: 100%; /* Ancho completo */
 }
 
-/*Alva */
+/* Estilo para secciones y modelos */
 .section, .models-section {
-    padding: 40px;
-    text-align: center;
-}
-.cartel {
-    width: auto;
-    height: 400px; 
-    overflow: hidden; 
-    display: flex; 
-    align-items: center;
-    justify-content: center; 
-    position: relative;
+    padding: 40px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
 }
 
+/* Estilo para la sección de promoción */
+.cartel {
+    width: auto; /* Ancho automático */
+    height: 400px; /* Altura fija */
+    overflow: hidden; /* Oculta el desbordamiento */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    position: relative; /* Posición relativa para elementos hijos */
+}
+
+/* Estilo para imágenes en la sección de promoción */
 .cartel img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
+    width: 100%; /* Ancho completo */
+    height: 400px; /* Altura fija */
+    object-fit: cover; /* Cubre el área sin distorsionar */
 }
-.model-btn{
-    border: none;
-    background-color: transparent; 
+
+/* Estilo para botones de modelos */
+.model-btn {
+    border: none; /* Sin borde */
+    background-color: transparent; /* Sin fondo */
 }
+
+/* Animación de desvanecimiento */
 .animate-fade {
-    animation: fadeInUp 0.7s;
+    animation: fadeInUp 0.7s; /* Aplicación de la animación */
 }
+
+/* Definición de la animación de desvanecimiento */
 @keyframes fadeInUp {
     0% {
-    opacity: 0;
-    transform: translateY(40px);
+        opacity: 0; /* Comienza invisible */
+        transform: translateY(40px); /* Se desplaza hacia abajo */
     }
     100% {
-    opacity: 1;
-    transform: translateY(0);
-                    }
-                }
+        opacity: 1; /* Se vuelve visible */
+        transform: translateY(0); /* Regresa a la posición original */
+    }
+}
 
-/* Dany*/
+/* Estilos para la sección de destacados */
 .destacados-section {
-  padding: 0;
-  margin: 0;
-  background-color: #000;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  height: 100vh;
-  overflow: hidden;
+    padding: 0; /* Sin espaciado interno */
+    margin: 0; /* Sin margen */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Color del texto */
+    font-family: 'Poppins', sans-serif; /* Fuente específica */
+    height: 100vh; /* Altura completa de la ventana */
+    overflow: hidden; /* Oculta el desbordamiento */
 }
 
+/* Estilo para el contenedor de la cuadrícula de destacados */
 .container-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 100vh;
-  width: 100vw;
+    display: grid; /* Grid layout */
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    grid-template-rows: 1fr 1fr; /* Dos filas */
+    height: 100vh; /* Altura completa de la ventana */
+    width: 100vw; /* Ancho completo de la ventana */
 }
 
+/* Estilo para cada tarjeta destacada */
 .destacado-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0; /* Elimina bordes para ocupar todo */
-  text-align: center;
-  transition: transform 0.3s ease;
+    position: relative; /* Posición relativa para elementos hijos */
+    overflow: hidden; /* Oculta el desbordamiento */
+    border-radius: 0; /* Elimina bordes para ocupar todo */
+    text-align: center; /* Centra el texto */
+    transition: transform 0.3s ease; /* Transición para efectos hover */
 }
 
+/* Estilo para imágenes en tarjetas destacadas */
 .destacado-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.9);
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Cubre el área sin distorsionar */
+    display: block; /* Bloque para evitar espacios adicionales */
+    filter: brightness(0.9); /* Reduce el brillo de la imagen */
 }
 
+/* Estilo para el contenido de texto en tarjetas destacadas */
 .destacado-card .text-content {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: #fff;
-  text-align: left;
-  z-index: 2;
+    position: absolute; /* Posición absoluta para superponer texto */
+    bottom: 20px; /* Espaciado desde la parte inferior */
+    left: 20px; /* Espaciado desde la izquierda */
+    color: #fff; /* Color del texto */
+    text-align: left; /* Alineación del texto */
+    z-index: 2; /* Asegura que se muestre encima de la imagen */
 }
 
+/* Estilo para títulos en tarjetas destacadas */
 .destacado-card h3 {
-  font-size: 1.5rem;
-  margin: 0;
+    font-size: 1.5rem; /* Tamaño de fuente */
+    margin: 0; /* Sin margen */
 }
 
+/* Estilo para texto resaltado en títulos */
 .destacado-card h3 span {
-  font-weight: bold;
-  color: #f0f;
+    font-weight: bold; /* Negrita */
+    color: #f0f; /* Color del texto resaltado */
 }
 
+/* Estilo para párrafos en tarjetas destacadas */
 .destacado-card p {
-  margin: 10px 0;
-  font-size: 0.9rem;
+    margin: 10px 0; /* Margen vertical */
+    font-size: 0.9rem; /* Tamaño de fuente */
 }
 
+/* Estilos para botones en tarjetas destacadas */
 .btn-white, .btn-green {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
+    display: inline-block; /* Botón en línea */
+    padding: 8px 16px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    font-weight: bold; /* Negrita */
+    text-decoration: none; /* Sin subrayado */
+    transition: 0.3s; /* Transición suave para hover */
 }
 
+/* Estilo para botón blanco */
 .btn-white {
-  background-color: #fff;
-  color: #000;
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Color del texto */
 }
 
+/* Estilo para botón verde */
 .btn-green {
-  background-color: #00ff99;
-  color: #000;
+    background-color: #00ff99; /* Fondo verde */
+    color: #000; /* Color del texto */
 }
 
+/* Efecto hover para botones */
 .btn-white:hover,
 .btn-green:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #fff;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 0 10px #fff; /* Sombra al pasar el mouse */
 }
 
-/* --- ESTILOS PARA EL MENU DE COMPRAS DESPLEGABLE --- */
+/* --- ESTILOS PARA EL MENÚ DE COMPRAS DESPLEGABLE --- */
 
-/* Contenedor principal del menu de compras, se posiciona de forma relativa para ubicar el submenu */
+/* Contenedor principal del menú de compras */
 .compras-menu {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
+    position: relative; /* Posición relativa para ubicar el submenú */
+    display: inline-block; /* Muestra en línea */
+    vertical-align: middle; /* Alineación vertical */
 }
 
-/* Boton que despliega el menu, sin fondo ni borde, cursor tipo puntero */
+/* Botón que despliega el menú */
 .compras-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    vertical-align: middle;
+    background: transparent; /* Sin fondo */
+    border: none; /* Sin borde */
+    padding: 0; /* Sin espaciado interno */
+    cursor: pointer; /* Cursor tipo puntero */
+    vertical-align: middle; /* Alineación vertical */
 }
 
-/* Imagen del boton del menu de compras, tamaño fijo */
+/* Imagen del botón del menú de compras */
 .compras-btn img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
+    width: 28px; /* Ancho de la imagen */
+    height: 28px; /* Altura de la imagen */
+    object-fit: contain; /* Ajusta la imagen sin distorsionar */
 }
 
-/* Submenu oculto por defecto, posicion absoluta respecto al contenedor */
+/* Submenú oculto por defecto */
 .compras-submenu {
     display: none; /* Oculto inicialmente */
-    position: absolute;
-    right: 0;
+    position: absolute; /* Posición absoluta respecto al contenedor */
+    right: 0; /* Alineación a la derecha */
     top: 120%; /* Aparece debajo del botón */
-    background: #17a099;
-    min-width: 220px;
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.28);
-    z-index: 1000; /* Se asegura que quede por encima de otros elementos */
+    background: #17a099; /* Fondo del submenú */
+    min-width: 220px; /* Ancho mínimo */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 12px rgba(0,0,0,0.28); /* Sombra del submenú */
+    z-index: 1000; /* Asegura que quede por encima de otros elementos */
 }
 
-/* Clase para mostrar el submenu cuando esta activo */
+/* Clase para mostrar el submenú cuando está activo */
 .compras-submenu.show {
-    display: block;
+    display: block; /* Muestra el submenú */
 }
 
-/* Cada elemento de la lista del submenu tiene un borde inferior */
+/* Estilo para cada elemento de la lista del submenú */
 .compras-submenu li {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #444; /* Borde inferior */
 }
 
-/* El ultimo elemento no tiene borde inferior */
+/* El último elemento no tiene borde inferior */
 .compras-submenu li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Elimina el borde */
 }
 
-/* Enlaces dentro del submenu, ocupan todo el ancho y tienen padding */
+/* Enlaces dentro del submenú */
 .compras-submenu a {
-    display: block;
-    color: #fff;
-    padding: 10px 18px;
-    text-decoration: none;
-    font-size: 1rem;
+    display: block; /* Ocupa todo el ancho */
+    color: #fff; /* Color del texto */
+    padding: 10px 18px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1rem; /* Tamaño de fuente */
 }
 
-/* Efecto hover para los enlaces del submenu */
+/* Efecto hover para enlaces del submenú */
 .compras-submenu a:hover {
-    background: #555;
+    background: #555; /* Cambio de fondo al pasar el mouse */
+}
+
+/* Estilo para el botón de eliminar en el submenú */
+.btn-eliminar {
+    width: 20px; /* Ajusta el tamaño de la imagen */
+    height: 20px; /* Ajusta el tamaño de la imagen */
+    margin-left: 10px; /* Espacio entre el texto y la imagen */
+    vertical-align: middle; /* Alineación vertical con el texto */
+}
+
+/* Efecto de opacidad al pasar el mouse sobre el botón de eliminar */
+.btn-eliminar:hover {
+    opacity: 0.7; /* Reduce la opacidad */
 }
