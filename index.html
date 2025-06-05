@@ -2,324 +2,251 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tech Mart</title>
-    <link rel="stylesheet" type="text/css" href="estilos.css" />
+    <title>Mi Portafolio Personal</title>
+    <link rel="stylesheet" type="text/css" href="casi.css" />
 </head>
 <body>
+    <!-- Encabezado -->
     <header class="header">
-        <img
-            src="img/logo.png"
-            alt="Logo del concesionario Luxury"
-            class="logo"
-            width="150"
-            height="50"
-        />
+        <img src="Img/logo.png" class="logo" >
         <div class="container">
-            <h1>
-                <span class="highlight">Tech Mart</span>
-            </h1>
+            <h1>Tecnologias <span class="highlight">TechMart</span></h1>
             <nav class="navbar">
                 <a href="#Ofertas">Ofertas</a>
-                <a href="#Modelos">Graficas</a>
+                <a href="#combos">Combos</a>
                 <a href="#Colecion">Colecciones</a>
-                <a href="#contacto">Contacto</a>
-                <a id="botonModoOscuro" class="dia-noche" href="javascript:void(0);">
-                    <img src=img/Luna.png width="20px" height="20px">
+                <a href="#Graficas">Graficas</a>
+                <a id="botonModoOscuro" class="dia-noche">
+                    <img src=Img/Luna.png width="20px" height="20px">
                 </a>
+                <a href="#"><img src="Img/Compra.png"  width="20px" height="20px"></a>
             </nav>
         </div>
     </header>
-<!-- Img-->
-<section class="cartel">
-    <img id="promocion" src="img/cartel.jpg" alt="cartel de promocion"/>
-</section>
-<main class="main">
-<!-- Entrada -->
-     <section class="section">   
-        <div class="contenedor">
-            <div class="bloque">
-                <img src="img/cas1.jpg" alt="PcCom Ready" class="producto-imagen">
-                <h3>PcCom Ready Intel i5</h3>
-                <p>32 GB RAM/1TB SSD/RTX 4060</p>
-                <button class="producto-precio">s/. 3422</button>
-            </div>
-            <div class="bloque">
-                <img src="img/amd1.jpg" alt="ZOTAC RTX 5060" class="producto-imagen">
-                <h3>ZOTAC RTX 5060 Ti</h3>
-                <p>16 GB GDDR7/DLSS4/Reflex 2 RTX AI</p>
-                <button class="producto-precio">s/. 1980.40</button>
-            </div>
-            <div class="bloque">
-                <img src="img/titan.jpg" alt="msi" class="producto-imagen">
-                <h3>Titan 18 HX AI A2XW</h3>
-                <p>(Procesador Intel® Core™ Ultra /16GB/1TB SSD/GeForce RTX™ Serie 50</p>
-                <button class="producto-precio">s/. 1605.29</button>
-            </div>
-            <div class="bloque">
-                <img src="img/board.png" alt="msi" class="producto-imagen">
-                <h3>MPG B550 GAMING PLUS</h3>
-                <p>pprocesadores 3ra Gen AMD Ryzen™ con actualización de BIOS Soporta memoria DDR4</p>
-                <button class="producto-precio">s/. 700.00</button>
-            </div>
-        </div>
+
+    <!-- Sección de Promoción -->
+    <section class="cartel">
+        <img id="promocion" src="Img/cartel.jpg" alt="cartel de promocion"/>
     </section>
-<!-- Ofertas -->
-        <section id="Destacados" class="section destacados-section">
-          <div class="container-grid">
-            <div class="destacado-card auricular">
-              <img src="img/audifono.webp" alt="Audífono Gamer">
-              <div class="text-content">
-                <h3>Audífono <span>Shake</span></h3>
-                <p><i class="fa fa-headphones"></i> Almohadillas | <i class="fa fa-music"></i> Estéreo 7.1</p>
-                <a href="#" class="btn-white">Compra Ahora</a>
-              </div>
-            </div>
 
-            <div class="destacado-card teclados">
-              <img src="img/teclado.webp" alt="Teclados RGB">
-              <div class="text-content">
-                <h3>Encuentra tu <span>Tamaño Perfecto</span></h3>
-                <p>Teclados 100% | 70% | 60%</p>
-                <a href="#" class="btn-white">Compra Ahora</a>
-              </div>
-            </div>
-
-            <div class="destacado-card mouse">
-              <img src="img/Mouse.webp" alt="Mouse Gamer">
-              <div class="text-content">
-                <h3>Mouse <span>Aurora</span></h3>
-                <p>Púrpura | Azul Polar | Verde Boreal</p>
-                <a href="#" class="btn-green">Compra Ahora</a>
-              </div>
-            </div>
-
-            <div class="destacado-card accesorios">
-              <img src="img/accesorios.webp" alt="Accesorios Gamer">
-              <div class="text-content">
-                <h3>Accesorios</h3>
-                <p>Complementa tus periféricos</p>
-                <a href="#" class="btn-green">Más información</a>
-              </div>
-            </div>
-          </div>
-        </section>
-<!-- Modelos -->
-        <!-- Modelos -->
-        <section id="Modelos" class="section">
-            <h2>ELIGE TU GRAFICA IDEAL</h2>
-            <!-- Botones de modelos de autos -->
-            <div class="model-buttons">
-            <!-- Modelo 1 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5070 Ti 16G GAMING TRIO OC"
-                data-price="$2,990"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_vga-1.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_gaming-text.png"
-                alt="BMW Serie 4"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            <!-- Modelo 2 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5080 16G GAMING TRIO OC WHITE"
-                data-price="$5,300"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_vga-2.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_gaming-text.png"
-                alt="BMW Serie 3"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            <!-- Modelo 3 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5080 16G GAMING TRIO OC"
-                data-price="$5,000"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_vga-1.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_gaming-text.png"
-                alt="BMW M3"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            <!-- modelo 4 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5060 Ti 8G GAMING TRIO OC WHITE"
-                data-price="$1,300"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/gb206-300-gaming-trio-white/images/kv-vga.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_gaming-text.png"
-                alt="BMW Serie X"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            </div>
-            <!--Prueba-->
-            <style>
-            .animate-fade {
-                animation: fadeInUp 0.7s;
-            }
-            @keyframes fadeInUp {
-                0% {
-                opacity: 0;
-                transform: translateY(40px);
-                }
-                100% {
-                opacity: 1;
-                transform: translateY(0);
-                }
-            }
-            </style>
-            <script>
-            document.querySelectorAll('.model-btn').forEach(btn => {
-              btn.addEventListener('click', function () {
-                const nameEl = document.getElementById('car-name');
-                const priceEl = document.getElementById('car-price');
-                const imgEl = document.getElementById('car-img');
-
-                // Cambiar contenido
-                nameEl.textContent = this.getAttribute('data-name');
-                priceEl.textContent = this.getAttribute('data-price');
-                imgEl.src = this.getAttribute('data-img');
-                imgEl.alt = this.getAttribute('data-name');
-
-                // Animación
-                [nameEl, priceEl, imgEl].forEach(el => {
-                el.classList.remove('animate-fade');
-                // Forzar reflow para reiniciar animación
-                void el.offsetWidth;
-                el.classList.add('animate-fade');
-                });
-              });
-            });
-            </script>
-            <!--hasta aqui-->
-            <!-- Resultado del modelo seleccionado -->
-            <div class="tab-result" style="display: flex; gap: 3rem; align-items: center; justify-content: center; min-height: 60vh;">
-            <div class="info-car aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="font-size: 2.2rem; max-width: 500px;">
-                <h2 id="car-name" style="font-size: 2.5rem; margin-bottom: 0.5rem;">GeForce RTX™ 5090 32G VANGUARD SOC LAUNCH EDITION</h2>
-                <div class="price" style="margin-bottom: 0;">
-                <p style="margin-top: 0; margin-bottom: 0;">Desde: 
-                    <span id="car-price" style="
-                        font-size: 2.8rem; 
-                        font-weight: bold; 
-                        background: linear-gradient(90deg, #00ff99 0%, #b83fe7 100%);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        background-clip: text;
-                        color: transparent;
-                        ">
-                        $22,990
-                    </span>
-                </p>
-                <button id="add-to-cart-btn" class="btn-lima">Compra Ahora</button>
+    <!-- Sección Principal -->
+    <main class="main">
+<!-- Almir -->
+        <!-- Sección de Proyectos -->
+        <section id="combos" class="section projects-section">
+            <div class="container">
+                <h2>Combos de Infarto</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="Img/cas1.jpg" alt="Proyecto 1">
+                        <div class="card-content">
+                            <h3>PcCom Ready Intel i5</h3>
+                            <p>32 GB RAM / 1TB SSD / RTX 4060.</p>
+                            <p>s/. 3422</p>
+                            <a href="#" class="btn">Comprar</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Img/amd1.jpg" alt="Proyecto 2">
+                        <div class="card-content">
+                            <h3>ZOTAC RTX 5060 Ti</h3>
+                            <p>16 GB GDDR7 / DLSS4 / Reflex 2 RTX AI.</p>
+                             <p>s/. 1980.40</p>
+                             <a href="#" class="btn">Agregar</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Img/titan.jpg" alt="Proyecto 3">
+                        <div class="card-content">
+                            <h3>Titan 18 HX AI A2XW</h3>
+                            <p>(Procesador Intel® Core™ Ultra / 16GB / 1TB SSD / GeForce RTX™ Serie 50).</p>
+                            <p>s/. 1605.29</p>
+                            <a href="#" class="btn">Agregar</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Img/board.png" alt="Proyecto 4">
+                        <div class="card-content">
+                            <h3>MPG B550 GAMING PLUS</h3>
+                            <p>pprocesadores 3ra Gen AMD Ryzen™ con actualización de BIOS Soporta memoria DDR4</p>
+                            <p>s/. 700.00</p>
+                            <a href="#" class="btn">Agregar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <style>
-            .btn-lima {
-                background: #00ff99;
-                color: #000000;
-                font-size: 2.2rem;
-                font-weight: bold;
-                padding: 1.2rem 3.2rem;
-                border: none;
-                border-radius: 30px;
-                cursor: pointer;
-                box-shadow: 0 2px 16px #00ff99;
-                transition: 
-                    transform 0.18s cubic-bezier(.4,2,.6,1), 
-                    box-shadow 0.18s cubic-bezier(.4,2,.6,1),
-                    filter 0.18s cubic-bezier(.4,2,.6,1);
-            }
-            .btn-lima:hover {
-                background: #00ff99; /* Mantener el mismo color */
-                transform: scale(1.09);
-                box-shadow: 0 0 20px 8px #3fe7d1, 0 2px 12px #00ff99;
-                filter: brightness(1.15);
-            }
-            </style>
-            <div class="img-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                <img id="car-img"
-                src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/new-gen/gb202-300-vanguard-soc-launch-edition/vga-gift.webp"
-                alt="BMW Serie 4"
-                style="max-width: 600px; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
-            </div>
+        </section>
+<!-- Daniel -->
+        <!-- Sección de Destacados -->
+        <section id="Colecion" class="section destacados-section">
+            <div class="container-grid">
+                <div class="destacado-card auricular">
+                    <img src="Img/audifono.webp" alt="Audífono Gamer">
+                    <div class="text-content">
+                        <h3>Audífono <span>Shake</span></h3>
+                        <p><i class="fa fa-headphones"></i> Almohadillas | <i class="fa fa-music"></i> Estéreo 7.1</p>
+                        <a href="#" class="btn-white">Compra Ahora</a>
+                    </div>
+                </div>
+
+                <div class="destacado-card teclados">
+                    <img src="Img/teclado.webp" alt="Teclados RGB">
+                    <div class="text-content">
+                        <h3>Encuentra tu <span>Tamaño Perfecto</span></h3>
+                        <p>Teclados 100% | 70% | 60%</p>
+                        <a href="#" class="btn-white">Compra Ahora</a>
+                    </div>
+                </div>
+
+                <div class="destacado-card mouse">
+                    <img src="Img/Mouse.webp" alt="Mouse Gamer">
+                    <div class="text-content">
+                        <h3>Mouse <span>Aurora</span></h3>
+                        <p>Púrpura | Azul Polar | Verde Boreal</p>
+                        <a href="#" class="btn-green">Compra Ahora</a>
+                    </div>
+                </div>
+
+                <div class="destacado-card accesorios">
+                    <img src="Img/accesorios.webp" alt="Accesorios Gamer">
+                    <div class="text-content">
+                        <h3>Accesorios</h3>
+                        <p>Complementa tus periféricos</p>
+                        <a href="#" class="btn-green">Más información</a>
+                    </div>
+                </div>
             </div>
         </section>
-<!-- Footer -->
+<!-- Alvaro -->
+        <!-- Sección de Modelos -->
+        <section id="Graficas" class="section">
+            <h2>ELIGE TU GRAFICA IDEAL</h2>
+            <div>
+                <button class="model-btn"
+                    style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
+                    data-name="GeForce RTX™ 5070 Ti 16G GAMING TRIO OC"
+                    data-price="$2,990"
+                    data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_vga-1.png">
+                    <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_gaming-text.png"
+                        alt="BMW Serie 4"
+                        style="max-width: 200px; height: 96px; object-fit: contain;" />
+                </button>
+                <!-- Modelo 2 -->
+                <button class="model-btn"
+                    style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
+                    data-name="GeForce RTX™ 5080 16G GAMING TRIO OC WHITE"
+                    data-price="$5,300"
+                    data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_vga-2.png">
+                    <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_gaming-text.png"
+                        alt="BMW Serie 3"
+                        style="max-width: 200px; height: 96px; object-fit: contain;" />
+                </button>
+                <!-- Modelo 3 -->
+                <button class="model-btn"
+                    style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
+                    data-name="GeForce RTX™ 5080 16G GAMING TRIO OC"
+                    data-price="$5,000"
+                    data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_vga-1.png">
+                    <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_gaming-text.png"
+                        alt="BMW M3"
+                        style="max-width: 200px; height: 96px; object-fit: contain;" />
+                </button>
+                <!-- modelo 4 -->
+                <button class="model-btn"
+                    style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
+                    data-name="GeForce RTX™ 5060 Ti 8G GAMING TRIO OC WHITE"
+                    data-price="$1,300"
+                    data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/gb206-300-gaming-trio-white/images/kv-vga.png">
+                    <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_gaming-text.png"
+                        alt="BMW Serie X"
+                        style="max-width: 200px; height: 96px; object-fit: contain;" />
+                </button>
+            </div>
+
+            <!-- Resultado del modelo seleccionado -->
+            <div class="tab-result" style="display: flex; gap: 3rem; align-items: center; justify-content: center; min-height: 60vh;">
+                <div class="info-car aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="font-size: 2.2rem; max-width: 500px;">
+                    <h2 id="car-name" style="font-size: 3rem;">GeForce RTX™ 5090 32G VANGUARD SOC LAUNCH EDITION</h2>
+                    <div class="price" style="margin-bottom: 2rem;">
+                    <p>Desde: <span id="car-price" style="font-size: 2.8rem; font-weight: bold; color: #007bff;">$22,990</span></p>
+                        <button id="add-to-cart-btn" style="margin-top: 1rem; padding: 0.7rem 2rem; font-size: 1.4rem; background: #007bff; color: #fff; border: none; border-radius: 0.5rem; cursor: pointer;">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+                <div class="img-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                    <img id="car-img"
+                    src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/new-gen/gb202-300-vanguard-soc-launch-edition/vga-gift.webp"
+                    alt="BMW Serie 4"
+                    style="max-width: 600px; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer id="contacto" class="footer">
         <div class="container">
             <h3>NUESTRAS REDES</h3>
-            <div class="social-links">
-                <a href="#" class="social-icon" >
-                    <i class="fa fa-envelope"></i>
-                </a>
-                <a href="#" class="social-icon" >
-                    <i class="fa fa-youtube-play"></i>
-                </a>
-                <a href="#" class="social-icon" >
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a href="#" class="social-icon" >
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </div>
             <div class="linea"></div>
-            <p class="copyright">© 2025. Tech-Mart</p>
+            <p class="copyright">© 2025. Luxury</p>
             <p class="copyright">Términos y condiciones</p>
             <p class="copyright">Políticas y privacidad</p>
-            <a href="#" class="social-icon" >
-                <i class="bi bi-book-fill"></i>
-            </a>
         </div>
     </footer>
+
     <!-- SCRIPT -->
     <script>
-    // Botón modo oscuro
-    document.querySelector('#botonModoOscuro').addEventListener('click', function () {
-        document.body.classList.toggle('ModoOscuro');
+        // Botón modo oscuro
+        document.querySelector('#botonModoOscuro').addEventListener('click', function () {
+            document.body.classList.toggle('ModoOscuro');
+            const header = document.querySelector('.header');
+            const footer = document.querySelector('.footer');
+            const cards = document.querySelectorAll('.card');
+            const headings = document.querySelectorAll('.section h2');
+            const buttons = document.querySelectorAll('.btn, .btn-white, .btn-green');
+            header.classList.toggle('ModoOscuro');
+            footer.classList.toggle('ModoOscuro');
+            cards.forEach(card => card.classList.toggle('ModoOscuro'));
+            headings.forEach(heading => heading.classList.toggle('ModoOscuro'));
+            buttons.forEach(button => button.classList.toggle('ModoOscuro'));
 
-        const header = document.querySelector('.header');
-        const footer = document.querySelector('.footer');
-        const bloques = document.querySelectorAll('.bloque');
-        const headings = document.querySelectorAll('.section h2');
-        const buttons = document.querySelectorAll('.btn');
-
-        header.classList.toggle('ModoOscuro');
-        footer.classList.toggle('ModoOscuro');
-        bloques.forEach(card => card.classList.toggle('ModoOscuro'));
-        headings.forEach(heading => heading.classList.toggle('ModoOscuro'));
-        buttons.forEach(button => button.classList.toggle('ModoOscuro'));
-
-        this.innerHTML = document.body.classList.contains('ModoOscuro')
-            ? '<img src=img/sol.png width="25px" height="25px">'
-            : '<img src=img/Luna.png width="20px" height="20px">';
-    });
-
-    // Botones de modelo de auto
-    document.querySelectorAll('.model-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const name = btn.getAttribute('data-name');
-            const price = btn.getAttribute('data-price');
-            const img = btn.getAttribute('data-img');
-
-            document.querySelector('#car-name').textContent = name;
-            document.querySelector('#car-price').textContent = price;
-            const carImg = document.querySelector('#car-img');
-            carImg.src = img;
-            carImg.alt = name;
+            this.innerHTML = document.body.classList.contains('ModoOscuro')
+                ? '<img src=Img/sol.png width="25px" height="25px">'
+                : '<img src=Img/Luna.png width="20px" height="20px">';
         });
-    });
 
-    // Carrusel de imágenes promocionales
-    const imagenes = [
-        "img/cartel.jpg",
-        "img/cartel2.webp"
-    ];
-    let indice = 0;
 
-    const cambiarImagen = () => {
-        indice = (indice + 1) % imagenes.length;
-        document.querySelector('#promocion').src = imagenes[indice];
-    };
+        // Botones de modelos de graficas
+        document.querySelectorAll('.model-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const name = btn.getAttribute('data-name');
+                const price = btn.getAttribute('data-price');
+                const img = btn.getAttribute('data-img');
 
-    setInterval(cambiarImagen, 3000);
+                document.querySelector('#car-name').textContent = name;
+                document.querySelector('#car-price').textContent = price;
+                const carImg = document.querySelector('#car-img');
+                carImg.src = img;
+                carImg.alt = name;
+            });
+        });
+
+        // Carrusel de imágenes promocionales
+        const imagenes = [
+            "Img/cartel.jpg",
+            "Img/cartel2.webp"
+        ];
+
+        let indice = 0;
+
+        const cambiarImagen = () => {
+            indice = (indice + 1) % imagenes.length;
+            document.querySelector('#promocion').src = imagenes[indice];
+        };
+
+        setInterval(cambiarImagen, 3000);
     </script>
 </body>
 </html>
