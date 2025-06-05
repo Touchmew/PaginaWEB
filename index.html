@@ -26,7 +26,9 @@
 
     <!-- Sección de Promoción -->
     <section class="cartel">
-        <img id="promocion" src="img/cartel.jpg" alt="cartel de promocion"/>
+        <a href="#Ofertas">
+            <img id="promocion" src="Img/cartel.jpg" alt="cartel de promocion"/>
+        </a>
     </section>
 
     <!-- Sección Principal -->
@@ -235,16 +237,19 @@
 
         // Carrusel de imágenes promocionales
         const imagenes = [
-            "img/cartel.jpg",
-            "img/cartel2.webp"
+            { src: "img/cartel.jpg", link: "#Ofertas" },
+            { src: "img/cartel2.webp", link: "#combos" },
+            { src: "img/Rtx.png", link: "#Graficas" }
         ];
 
         let indice = 0;
 
-        const cambiarImagen = () => {
-            indice = (indice + 1) % imagenes.length;
-            document.querySelector('#promocion').src = imagenes[indice];
-        };
+         const cambiarImagen = () => {
+                indice = (indice + 1) % imagenes.length;
+                const promocion = document.querySelector('#promocion');
+                promocion.src = imagenes[indice].src;
+                promocion.parentElement.href = imagenes[indice].link; // Cambia el enlace del padre
+            };
 
         setInterval(cambiarImagen, 3000);
     </script>
