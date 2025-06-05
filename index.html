@@ -20,6 +20,15 @@
                     <img src=img/Luna.png width="20px" height="20px">
                 </a>
                 <a href="#"><img src="img/Compra.png"  width="20px" height="20px"></a>
+                <!-- Menu de compras con imagen como boton -->
+                <div class="compras-menu" id="comprasMenu">
+                    <button class="compras-btn" id="btnCompras" aria-label="Ver compras">
+                        <img src="img/Compra.png" alt="Carrito de compras" />
+                    </button>
+                    <ul class="compras-submenu" id="submenuCompras">
+                        <!-- Aqui se agregan los productos comprados -->
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
@@ -326,6 +335,56 @@
             };
 
         setInterval(cambiarImagen, 3000);
+        // --- MENÚ DE COMPRAS DESPLEGABLE ---
+        const btnCompras = document.getElementById('btnCompras');
+        const submenuCompras = document.getElementById('submenuCompras');
+
+        // Muestra o oculta el menu de compras al hacer clic en el botón
+        btnCompras.addEventListener('click', function(e) {
+            e.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
+            submenuCompras.classList.toggle('show');
+        });
+
+        // Cierra el menú si se hace clic fuera de él
+        window.addEventListener('click', function() {
+            submenuCompras.classList.remove('show');
+        });
+
+        // --- AGREGAR PRODUCTOS AL MENÚ DE COMPRAS ---
+        // Para los productos de la sección principal
+        document.querySelectorAll('.card .btn-comprar').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = btn.closest('.card');
+                const nombre = card.querySelector('h3').textContent.trim();
+                // Toma el último <p> como precio
+                const precio = card.querySelectorAll('p')[card.querySelectorAll('p').length - 1].textContent.trim();
+                const textoProducto = `${nombre} - ${precio}`;
+
+                const nuevoProducto = document.createElement('li');
+                const enlaceProducto = document.createElement('a');
+                enlaceProducto.href = '#';
+                enlaceProducto.textContent = textoProducto;
+                nuevoProducto.appendChild(enlaceProducto);
+                submenuCompras.appendChild(nuevoProducto);
+                submenuCompras.classList.add('show'); // Muestra el menú al agregar
+            });
+        });
+
+        // Para el producto destacado de modelos
+        document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+            const nombre = document.getElementById('car-name').textContent.trim();
+            const precio = document.getElementById('car-price').textContent.trim();
+            const textoProducto = `${nombre} - ${precio}`;
+
+            const nuevoProducto = document.createElement('li');
+            const enlaceProducto = document.createElement('a');
+            enlaceProducto.href = '#';
+            enlaceProducto.textContent = textoProducto;
+            nuevoProducto.appendChild(enlaceProducto);
+            submenuCompras.appendChild(nuevoProducto);
+            submenuCompras.classList.add('show');
+        });
     </script>
 </body>
 </html>
