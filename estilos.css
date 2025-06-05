@@ -332,3 +332,70 @@ body.ModoOscuro {
   transform: scale(1.05);
   box-shadow: 0 0 10px #fff;
 }
+
+/* --- ESTILOS PARA EL MENU DE COMPRAS DESPLEGABLE --- */
+
+/* Contenedor principal del menu de compras, se posiciona de forma relativa para ubicar el submenu */
+.compras-menu {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Boton que despliega el menu, sin fondo ni borde, cursor tipo puntero */
+.compras-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/* Imagen del boton del menu de compras, tamaño fijo */
+.compras-btn img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Submenu oculto por defecto, posicion absoluta respecto al contenedor */
+.compras-submenu {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    right: 0;
+    top: 120%; /* Aparece debajo del botón */
+    background: #17a099;
+    min-width: 220px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+    z-index: 1000; /* Se asegura que quede por encima de otros elementos */
+}
+
+/* Clase para mostrar el submenu cuando esta activo */
+.compras-submenu.show {
+    display: block;
+}
+
+/* Cada elemento de la lista del submenu tiene un borde inferior */
+.compras-submenu li {
+    border-bottom: 1px solid #444;
+}
+
+/* El ultimo elemento no tiene borde inferior */
+.compras-submenu li:last-child {
+    border-bottom: none;
+}
+
+/* Enlaces dentro del submenu, ocupan todo el ancho y tienen padding */
+.compras-submenu a {
+    display: block;
+    color: #fff;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Efecto hover para los enlaces del submenu */
+.compras-submenu a:hover {
+    background: #555;
+}
