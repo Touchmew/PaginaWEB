@@ -1,414 +1,481 @@
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mi Portafolio Personal</title>
-    <link rel="stylesheet" type="text/css" href="estilos.css" />
-</head>
-<body>
-    <!-- Encabezado -->
-    <header class="header">
-        <img src="img/logo.png" class="logo" >
-        <div class="container">
-            <h1>Tecnologias <span class="highlight">TechMart</span></h1>
-            <nav class="navbar">
-                <a href="#Ofertas">Ofertas</a>
-                <a href="#combos">Combos</a>
-                <a href="#Colecion">Colecciones</a>
-                <a href="#Graficas">Graficas</a>
-                <a id="botonModoOscuro" class="dia-noche">
-                    <img src=img/Luna.png width="20px" height="20px">
-                </a>
-                <!-- Menu de compras con imagen como boton -->
-                <div class="compras-menu" id="comprasMenu">
-                    <button class="compras-btn" id="btnCompras" aria-label="Ver compras">
-                        <img src="img/Compra.png" alt="Carrito de compras" />
-                    </button>
-                    <ul class="compras-submenu" id="submenuCompras">
-                        <!-- Aqui se agregan los productos comprados -->
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+<!DOCTYPE html>
+<html>
 
-    <!-- Sección de Promoción -->
-    <section class="cartel">
-        <a href="#Ofertas">
-            <img id="promocion" src="img/cartel.jpg" alt="cartel de promocion"/>
-        </a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página web</title>
+  <!-- Link de css -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- Link de bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <!-- Link de materialize -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Link de FonsIcons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Link de tipo de letra -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Encabezado -->
+  <header>
+    <nav class="navbar">
+      <div class="burger">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+      <ul class="menu">
+        <li><a href="#">INICIO</a></li>
+        <li><a href="#OFERTAS">OFERTAS</a></li>
+        <li><a href="#LO-NUEVO">LO NUEVO</a></li>
+        <li><a href="#">LOCALES</a></li>
+        <li><a href="#">SOPORTE</a></li>
+      </ul>
+
+      <!-- Carrito de compras -->
+      <div class="Carrito">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span class="texto">CARRITO</span>
+        <span class="numero">(0)</span>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Cartel de imágenes -->
+  <div id="cartel">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/cartel1.png" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="img/cartel2.png" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="img/cartel3.png" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- video bucle -->
+    <div id="video-container">
+      <video autoplay muted loop playsinline style="width:100%;height:auto;max-width:100%;" playsinline="playsinline">
+      <source src="https://dlcdnwebimgs.asus.com/files/media/2523515c-4a57-41a5-9004-67490621ae51/v1/videos/kv.mp4" type="video/mp4">
+      </video>
+    </div>
+    <section class="lo-nuevo-section" id="OFERTAS">
+      <div class="container">
+        <div class="section-title">
+          <h2>🔥 OFERTAS ESPECIALES 🔥</h2>
+          <p class="lead">Descubre las mejores ofertas en tecnología gaming</p>
+        </div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Seccion 1 -->
+                    <div class="carousel-section">
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/1oferta.png" style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">ASUS ROG Strix G15</div>
+                            <div class="offer-description">
+                                Laptop gaming con RTX 4060, AMD Ryzen 7, 16GB RAM, perfecta para gaming profesional.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$1,299</span>
+                                <span class="discount-price">$999</span>
+                                <span class="discount-badge">-23%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/2oferta.png" style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">Monitor ROG Swift 27</div>
+                            <div class="offer-description">
+                                Monitor gaming 1440p, 165Hz, G-Sync compatible, ideal para competencias.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$449</span>
+                                <span class="discount-price">$349</span>
+                                <span class="discount-badge">-22%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/3oferta.png" style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">Teclado ROG Strix Scope</div>
+                            <div class="offer-description">
+                                Teclado mecánico RGB, switches Cherry MX, diseño compacto para gaming.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$159</span>
+                                <span class="discount-price">$119</span>
+                                <span class="discount-badge">-25%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Seccion 2 -->
+                    <div class="carousel-section">
+                        <div class="offer-card">
+                          <div class="offer-image">
+                            <img src="img/4oferta.png"  style="width: 200px; height: auto;">
+                          </div>
+                          <div class="offer-title">Mouse ROG Gladius III</div>
+                          <div class="offer-description">
+                            Mouse gaming inalámbrico, 19000 DPI, switches intercambiables, ergonómico.
+                          </div>
+                          <div class="offer-price">
+                            <span class="original-price">$89</span>
+                            <span class="discount-price">$69</span>
+                            <span class="discount-badge">-22%</span>
+                          </div>
+                          <button class="cta-button animate-on-scroll scale-in">
+                            <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                          </button>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/5oferta.png"  style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">Auriculares ROG Delta S</div>
+                            <div class="offer-description">
+                                Auriculares gaming con audio Hi-Res, micrófono AI, comodidad extrema.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$199</span>
+                                <span class="discount-price">$149</span>
+                                <span class="discount-badge">-25%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/6oferta.png" style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">Tarjeta Gráfica RTX 4070</div>
+                            <div class="offer-description">
+                                GPU de última generación, ray tracing, DLSS 3, rendimiento excepcional.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$599</span>
+                                <span class="discount-price">$529</span>
+                                <span class="discount-badge">-12%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Seccion 3 -->
+                    <div class="carousel-section">
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/7oferta.png" style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">Control ROG Raikiri Pro</div>
+                            <div class="offer-description">
+                                Control gaming profesional, triggers ajustables, conectividad múltiple.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$199</span>
+                                <span class="discount-price">$159</span>
+                                <span class="discount-badge">-20%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/8oferta.png" style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">Silla Gaming ROG Chariot</div>
+                            <div class="offer-description">
+                                Silla ergonómica premium, soporte lumbar, materiales de alta calidad.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$499</span>
+                                <span class="discount-price">$399</span>
+                                <span class="discount-badge">-20%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="img/9oferta.png" style="width: 200px; height: auto;">
+                            </div>
+                            <div class="offer-title">Router ROG Rapture AX6000</div>
+                            <div class="offer-description">
+                                Router gaming WiFi 6, baja latencia, optimización para juegos online.
+                            </div>
+                            <div class="offer-price">
+                                <span class="original-price">$399</span>
+                                <span class="discount-price">$299</span>
+                                <span class="discount-badge">-25%</span>
+                            </div>
+                            <button class="cta-button animate-on-scroll scale-in">
+                                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navegación -->
+            <div class="carousel-nav">
+                <button class="nav-button" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="nav-indicators" id="indicators">
+                    <div class="nav-dot active" data-section="0"></div>
+                    <div class="nav-dot" data-section="1"></div>
+                    <div class="nav-dot" data-section="2"></div>
+                </div>
+                
+                <button class="nav-button" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
     </section>
 
-    <!-- Sección Principal -->
-    <main class="main">
-<!-- Almir -->
-        <!-- Sección de Proyectos -->
-        <section id="combos" class="section projects-section">
-            <div class="container">
-                <h2>Combos de Infarto</h2>
-                <div class="card-container">
-                    <div class="card">
-                        <img src="img/cas1.jpg" alt="Proyecto 1">
-                        <div class="card-content">
-                            <h3>PcCom Ready Intel i5</h3>
-                            <p>32 GB RAM / 1TB SSD / RTX 4060.</p>
-                            <p>s/. 3422</p>
-                            <a href="#" class="btn btn-comprar">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/amd1.jpg" alt="Proyecto 2">
-                        <div class="card-content">
-                            <h3>ZOTAC RTX 5060 Ti</h3>
-                            <p>16 GB GDDR7 / DLSS4 / Reflex 2 RTX AI.</p>
-                             <p>s/. 1980.40</p>
-                             <a href="#" class="btn btn-comprar">Agregar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/titan.jpg" alt="Proyecto 3">
-                        <div class="card-content">
-                            <h3>Titan 18 HX AI A2XW</h3>
-                            <p>(Procesador Intel® Core™ Ultra / 16GB / 1TB SSD / GeForce RTX™ Serie 50).</p>
-                            <p>s/. 1605.29</p>
-                            <a href="#" class="btn btn-comprar">Agregar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="img/board.png" alt="Proyecto 4">
-                        <div class="card-content">
-                            <h3>MPG B550 GAMING PLUS</h3>
-                            <p>pprocesadores 3ra Gen AMD Ryzen™ con actualización de BIOS Soporta memoria DDR4</p>
-                            <p>s/. 700.00</p>
-                            <a href="#" class="btn btn-comprar">Agregar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-<!-- Daniel -->
-        <!-- Sección de Destacados -->
-        <section id="Colecion" class="section destacados-section">
-            <div class="container-grid">
-                <div class="destacado-card auricular">
-                    <img src="img/audifono.webp" alt="Audífono Gamer">
-                    <div class="text-content">
-                        <h3>Audífono <span>Shake</span></h3>
-                        <p><i class="fa fa-headphones"></i> Almohadillas | <i class="fa fa-music"></i> Estéreo 7.1</p>
-                        <a href="#" class="btn-white">Compra Ahora</a>
-                    </div>
-                </div>
-
-                <div class="destacado-card teclados">
-                    <img src="img/teclado.webp" alt="Teclados RGB">
-                    <div class="text-content">
-                        <h3>Encuentra tu <span>Tamaño Perfecto</span></h3>
-                        <p>Teclados 100% | 70% | 60%</p>
-                        <a href="#" class="btn-white">Compra Ahora</a>
-                    </div>
-                </div>
-
-                <div class="destacado-card mouse">
-                    <img src="img/Mouse.webp" alt="Mouse Gamer">
-                    <div class="text-content">
-                        <h3>Mouse <span>Aurora</span></h3>
-                        <p>Púrpura | Azul Polar | Verde Boreal</p>
-                        <a href="#" class="btn-green">Compra Ahora</a>
-                    </div>
-                </div>
-
-                <div class="destacado-card accesorios">
-                    <img src="img/accesorios.webp" alt="Accesorios Gamer">
-                    <div class="text-content">
-                        <h3>Accesorios</h3>
-                        <p>Complementa tus periféricos</p>
-                        <a href="#" class="btn-green">Más información</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-<!-- Alvaro -->
-        <!-- Sección de Modelos -->
-        <section id="Graficas" class="section">
-            <h2>ELIGE TU GRAFICA IDEAL</h2>
-            <!-- Botones de modelos de autos -->
-            <div class="model-buttons">
-            <!-- Modelo 1 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5070 Ti 16G GAMING TRIO OC"
-                data-price="$2,990"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_vga-1.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_gaming-text.png"
-                alt="BMW Serie 4"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            <!-- Modelo 2 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5080 16G GAMING TRIO OC WHITE"
-                data-price="$5,300"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_vga-2.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_gaming-text.png"
-                alt="BMW Serie 3"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            <!-- Modelo 3 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5080 16G GAMING TRIO OC"
-                data-price="$5,000"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_vga-1.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio/images/kv_gaming-text.png"
-                alt="BMW M3"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            <!-- modelo 4 -->
-            <button class="model-btn"
-                style="padding: 0.6rem 1.4rem; font-size: 1.8rem; max-width: 400px;"
-                data-name="GeForce RTX™ 5060 Ti 8G GAMING TRIO OC WHITE"
-                data-price="$1,300"
-                data-img="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/gb206-300-gaming-trio-white/images/kv-vga.png">
-                <img src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/GB203-400-Gaming-trio-white/images/kv_gaming-text.png"
-                alt="BMW Serie X"
-                style="max-width: 200px; height: 96px; object-fit: contain;" />
-            </button>
-            </div>
-            <!--Prueba-->
-            <style>
-            .animate-fade {
-                animation: fadeInUp 0.7s;
-            }
-            @keyframes fadeInUp {
-                0% {
-                opacity: 0;
-                transform: translateY(40px);
-                }
-                100% {
-                opacity: 1;
-                transform: translateY(0);
-                }
-            }
-            </style>
-            <script>
-            document.querySelectorAll('.model-btn').forEach(btn => {
-              btn.addEventListener('click', function () {
-                const nameEl = document.getElementById('car-name');
-                const priceEl = document.getElementById('car-price');
-                const imgEl = document.getElementById('car-img');
-
-                // Cambiar contenido
-                nameEl.textContent = this.getAttribute('data-name');
-                priceEl.textContent = this.getAttribute('data-price');
-                imgEl.src = this.getAttribute('data-img');
-                imgEl.alt = this.getAttribute('data-name');
-
-                // Animación
-                [nameEl, priceEl, imgEl].forEach(el => {
-                el.classList.remove('animate-fade');
-                // Forzar reflow para reiniciar animación
-                void el.offsetWidth;
-                el.classList.add('animate-fade');
-                });
-              });
-            });
-            </script>
-            <!--hasta aqui-->
-            <!-- Resultado del modelo seleccionado -->
-            <div class="tab-result" style="display: flex; gap: 3rem; align-items: center; justify-content: center; min-height: 60vh;">
-            <div class="info-car aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" style="font-size: 2.2rem; max-width: 500px;">
-                <h2 id="car-name" style="font-size: 2.5rem; margin-bottom: 0.5rem;">GeForce RTX™ 5090 32G VANGUARD SOC LAUNCH EDITION</h2>
-                <div class="price" style="margin-bottom: 0;">
-                <p style="margin-top: 0; margin-bottom: 0;">Desde: 
-                    <span id="car-price" style="
-                        font-size: 2.8rem; 
-                        font-weight: bold; 
-                        background: linear-gradient(90deg, #00ff99 0%, #b83fe7 100%);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        background-clip: text;
-                        color: transparent;
-                        ">
-                        $22,990
-                    </span>
-                </p>
-                <button id="add-to-cart-btn" class="btn-lima">Compra Ahora</button>
-                </div>
-            </div>
-            <style>
-            .btn-lima {
-                background: #00ff99;
-                color: #000000;
-                font-size: 2.2rem;
-                font-weight: bold;
-                padding: 1.2rem 3.2rem;
-                border: none;
-                border-radius: 30px;
-                cursor: pointer;
-                box-shadow: 0 2px 16px #00ff99;
-                transition: 
-                    transform 0.18s cubic-bezier(.4,2,.6,1), 
-                    box-shadow 0.18s cubic-bezier(.4,2,.6,1),
-                    filter 0.18s cubic-bezier(.4,2,.6,1);
-            }
-            .btn-lima:hover {
-                background: #00ff99; /* Mantener el mismo color */
-                transform: scale(1.09);
-                box-shadow: 0 0 20px 8px #3fe7d1, 0 2px 12px #00ff99;
-                filter: brightness(1.15);
-            }
-            </style>
-            <div class="img-wrap aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
-                <img id="car-img"
-                src="https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/new-gen/gb202-300-vanguard-soc-launch-edition/vga-gift.webp"
-                alt="BMW Serie 4"
-                style="max-width: 600px; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.12);" />
-            </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer id="contacto" class="footer">
-        <div class="container">
-            <h3>NUESTRAS REDES</h3>
-            <div class="linea"></div>
-            <p class="copyright">© 2025. Luxury</p>
-            <p class="copyright">Términos y condiciones</p>
-            <p class="copyright">Políticas y privacidad</p>
+<!-- Productos en vista -->
+<section class="lo-nuevo-section" id="PRODUCTOS">
+  <div class="container">
+    <div class="section-title">
+      <h2>💻 PRODUCTOS DESTACADOS 💻</h2>
+      <p class="lead">Descubre nuestra selección de productos gaming premium</p>
+    </div>
+    <div class="container-items">
+      <div class="item">
+        <div class="offer-card">
+          <div class="offer-image" style="height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+            <img src="img/producto1.png" alt="ROG Astral GeForce RTX™ 5080" style="width: 200px; height: auto; max-height: 200px; object-fit: contain;">
+          </div>
+          <div class="offer-title" style="margin-top: 10px;">ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition</div>
+          <div class="offer-description">
+            Tarjeta gráfica de última generación con tecnología GDDR7 para el máximo rendimiento gaming.
+          </div>
+          <div class="offer-price">
+            <span class="discount-price">$899</span>
+          </div>
+          <button class="cta-button animate-on-scroll scale-in" data-product-name="ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition">
+            <i class="fas fa-shopping-cart"></i> Comprar Ahora
+          </button>
         </div>
-    </footer>
+      </div>
 
-    <!-- SCRIPT -->
-    <script>
-        // Botón modo oscuro
-        document.querySelector('#botonModoOscuro').addEventListener('click', function () {
-            document.body.classList.toggle('ModoOscuro');
-            const header = document.querySelector('.header');
-            const footer = document.querySelector('.footer');
-            const cards = document.querySelectorAll('.card');
-            const headings = document.querySelectorAll('.section h2');
-            const buttons = document.querySelectorAll('.btn, .btn-white, .btn-green');
-            header.classList.toggle('ModoOscuro');
-            footer.classList.toggle('ModoOscuro');
-            cards.forEach(card => card.classList.toggle('ModoOscuro'));
-            headings.forEach(heading => heading.classList.toggle('ModoOscuro'));
-            buttons.forEach(button => button.classList.toggle('ModoOscuro'));
+      <div class="item">
+        <div class="offer-card">
+          <div class="offer-image" style="height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+            <img src="img/producto2.png" alt="ROG Astral GeForce RTX™ 5080" style="width: 200px; height: auto; max-height: 200px; object-fit: contain;">
+          </div>
+          <div class="offer-title" style="margin-top: 10px;">ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition</div>
+          <div class="offer-description">
+            Potencia extrema para gaming 4K y ray tracing avanzado con arquitectura de nueva generación.
+          </div>
+          <div class="offer-price">
+            <span class="discount-price">$899</span>
+          </div>
+          <button class="cta-button animate-on-scroll scale-in" data-product-name="ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition">
+            <i class="fas fa-shopping-cart"></i> Comprar Ahora
+          </button>
+        </div>
+      </div>
 
-            this.innerHTML = document.body.classList.contains('ModoOscuro')
-                ? '<img src=img/sol.png width="25px" height="25px">'
-                : '<img src=img/Luna.png width="20px" height="20px">';
-        });
+      <div class="item">
+        <div class="offer-card">
+          <div class="offer-image" style="height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+            <img src="img/producto3.png" alt="ROG Strix GeForce RTX™ 4060 Ti" style="width: 200px; height: auto; max-height: 200px; object-fit: contain;">
+          </div>
+          <div class="offer-title" style="margin-top: 10px;">ROG Strix GeForce RTX™ 4060 Ti 8GB GDDR6 OC Edition</div>
+          <div class="offer-description">
+            Perfecta para gaming 1440p con excelente relación precio-rendimiento y tecnología RTX.
+          </div>
+          <div class="offer-price">
+            <span class="discount-price">$459</span>
+          </div>
+          <button class="cta-button animate-on-scroll scale-in" data-product-name="ROG Strix GeForce RTX™ 4060 Ti 8GB GDDR6 OC Edition">
+            <i class="fas fa-shopping-cart"></i> Comprar Ahora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Sección Lo Nuevo -->
+    <section class="lo-nuevo-section" id="LO-NUEVO">
+        <div class="container">
+            <!-- Título de la sección -->
+            <div class="section-title animate-on-scroll fade-in-up">
+                <h2>LO NUEVO</h2>
+                <p>Descubre la última tecnología en laptops gaming</p>
+            </div>
+            <!-- Contenido principal -->
+            <div class="main-content">
+                <!-- Laptop container -->
+                <div class="laptop-container animate-on-scroll slide-in-left">
+                    <div class="laptop-image">
+                        <div class="laptop-mockup">
+                            <div class="laptop-screen">
+                                <img src="img/LoNuevo.png" alt="producto" />
+                            </div>
+                            <div class="laptop-keyboard">
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                                <div class="key"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Info container -->
+                <div class="info-container animate-on-scroll slide-in-right">
+                    <h3 class="product-title" >ASUS ROG Flow Z13</h3>
+                    <p class="product-subtitle">Gaming Tablet Revolucionaria</p>
+                    <p class="product-description">
+                        La perfecta fusión entre portabilidad extrema y rendimiento gaming profesional. 
+                        Diseñada para gamers que no comprometen la potencia por la movilidad.
+                    </p>
 
-        // Botones de modelos de graficas
-        document.querySelectorAll('.model-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const name = btn.getAttribute('data-name');
-                const price = btn.getAttribute('data-price');
-                const img = btn.getAttribute('data-img');
+                    <!-- Grid de características -->
+                    <div class="features-grid">
+                        <div class="feature-card animate-on-scroll fade-in-up" data-delay="200">
+                            <div class="feature-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="feature-title">Intel Core i9</div>
+                            <div class="feature-desc">Procesador de 12va gen</div>
+                        </div>
+                        <div class="feature-card animate-on-scroll fade-in-up" data-delay="400">
+                            <div class="feature-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <div class="feature-title">32GB LPDDR5</div>
+                            <div class="feature-desc">RAM ultrarrápida</div>
+                        </div>
+                        <div class="feature-card animate-on-scroll fade-in-up" data-delay="600">
+                            <div class="feature-icon">
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                            <div class="feature-title">70Wh Battery</div>
+                            <div class="feature-desc">10+ horas de uso</div>
+                        </div>
+                        <div class="feature-card animate-on-scroll fade-in-up" data-delay="800">
+                            <div class="feature-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="feature-title">13" 4K Touch</div>
+                            <div class="feature-desc">Pantalla OLED HDR</div>
+                        </div>
+                    </div>
 
-                document.querySelector('#car-name').textContent = name;
-                document.querySelector('#car-price').textContent = price;
-                const carImg = document.querySelector('#car-img');
-                carImg.src = img;
-                carImg.alt = name;
-            });
-        });
+                    <!-- Botón CTA -->
+                    <a href="#" class="cta-button animate-on-scroll scale-in">
+                        <i class="fas fa-shopping-cart"></i>
+                        Ver Detalles
+                    </a>
+                </div>
+            </div>
 
-        // Carrusel de imágenes promocionales
-        const imagenes = [
-            { src: "img/cartel.jpg", link: "#Ofertas" },
-            { src: "img/cartel2.webp", link: "#combos" },
-            { src: "img/Rtx.png", link: "#Graficas" }
-        ];
+            <!-- Especificaciones técnicas -->
+            <div class="specs-section animate-on-scroll fade-in-up">
+                <h3 class="specs-title">Especificaciones Técnicas</h3>
+                <div class="specs-grid">
+                    <div class="spec-item animate-on-scroll slide-in-left" data-delay="100">
+                        <span class="spec-label">Procesador</span>
+                        <span class="spec-value">Intel Core i9-12900H</span>
+                    </div>
+                    <div class="spec-item animate-on-scroll slide-in-left" data-delay="200">
+                        <span class="spec-label">Gráficos</span>
+                        <span class="spec-value">Intel Iris Xe Graphics</span>
+                    </div>
+                    <div class="spec-item animate-on-scroll slide-in-left" data-delay="300">
+                        <span class="spec-label">Almacenamiento</span>
+                        <span class="spec-value">1TB PCIe 4.0 SSD</span>
+                    </div>
+                    <div class="spec-item animate-on-scroll slide-in-left" data-delay="400">
+                        <span class="spec-label">Conectividad</span>
+                        <span class="spec-value">Wi-Fi 6E, Thunderbolt 4</span>
+                    </div>
+                    <div class="spec-item animate-on-scroll slide-in-left" data-delay="500">
+                        <span class="spec-label">Peso</span>
+                        <span class="spec-value">1.18 kg</span>
+                    </div>
+                    <div class="spec-item animate-on-scroll slide-in-left" data-delay="600">
+                        <span class="spec-label">Sistema</span>
+                        <span class="spec-value">Windows 11 Pro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        let indice = 0;
+  <!-- Anuncio que sale -->
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+    style="position: fixed; bottom: 20px; right: 20px;">
+    <div class="toast-header">
+      <img src="https://media.tenor.com/MojW2yr1vFoAAAAM/money-money-money.gif" alt="Icono"
+        style="width: 20px; height: 20px; margin-right: 10px;">
+      <strong class="me-auto">Gracias por su compra</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Se añadió al carrito su compra.
+    </div>
+  </div>
 
-         const cambiarImagen = () => {
-                indice = (indice + 1) % imagenes.length;
-                const promocion = document.querySelector('#promocion');
-                promocion.src = imagenes[indice].src;
-                promocion.parentElement.href = imagenes[indice].link; // Cambia el enlace del padre
-            };
-
-        setInterval(cambiarImagen, 3000);
-        // --- MENÚ DE COMPRAS DESPLEGABLE ---
-        const btnCompras = document.getElementById('btnCompras');
-        const submenuCompras = document.getElementById('submenuCompras');
-
-        // Muestra o oculta el menu de compras al hacer clic en el botón
-        btnCompras.addEventListener('click', function(e) {
-            e.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
-            submenuCompras.classList.toggle('show');
-        });
-
-        // Cierra el menú si se hace clic fuera de él
-        window.addEventListener('click', function() {
-            submenuCompras.classList.remove('show');
-        });
-
-        // --- AGREGAR PRODUCTOS AL MENÚ DE COMPRAS ---
-// Para los productos de la sección principal
-document.querySelectorAll('.card .btn-comprar').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const card = btn.closest('.card');
-        const nombre = card.querySelector('h3').textContent.trim();
-        const precio = card.querySelectorAll('p')[card.querySelectorAll('p').length - 1].textContent.trim();
-        const textoProducto = `${nombre} - ${precio}`;
-
-        const nuevoProducto = document.createElement('li');
-        nuevoProducto.textContent = textoProducto;
-
-        // Crear imagen de eliminar
-        const imgEliminar = document.createElement('img');
-        imgEliminar.src = 'img/Basura.png'; // Ruta de la imagen
-        imgEliminar.alt = 'Eliminar';
-        imgEliminar.classList.add('btn-eliminar'); // Añadir clase para estilos si es necesario
-        imgEliminar.style.cursor = 'pointer'; // Cambiar el cursor al pasar el mouse
-
-        // Evento para eliminar el producto
-        imgEliminar.addEventListener('click', function() {
-            submenuCompras.removeChild(nuevoProducto);
-        });
-
-        nuevoProducto.appendChild(imgEliminar); // Añadir la imagen al elemento de la lista
-        submenuCompras.appendChild(nuevoProducto);
-        submenuCompras.classList.add('show'); // Muestra el menú al agregar
-    });
-});
-
-// Para el producto destacado de modelos
-document.getElementById('add-to-cart-btn').addEventListener('click', function() {
-    const nombre = document.getElementById('car-name').textContent.trim();
-    const precio = document.getElementById('car-price').textContent.trim();
-    const textoProducto = `${nombre} - ${precio}`;
-
-    const nuevoProducto = document.createElement('li');
-    nuevoProducto.textContent = textoProducto;
-
-    // Crear imagen de eliminar
-    const imgEliminar = document.createElement('img');
-    imgEliminar.src = 'img/Basura.png'; // Ruta de la imagen
-    imgEliminar.alt = 'Eliminar';
-    imgEliminar.classList.add('btn-eliminar'); // Añadir clase para estilos si es necesario
-    imgEliminar.style.cursor = 'pointer'; // Cambiar el cursor al pasar el mouse
-
-    // Evento para eliminar el producto
-    imgEliminar.addEventListener('click', function() {
-        submenuCompras.removeChild(nuevoProducto);
-    });
-
-    nuevoProducto.appendChild(imgEliminar); // Añadir la imagen al elemento de la lista
-    submenuCompras.appendChild(nuevoProducto);
-    submenuCompras.classList.add('show');
-});
-
-    </script>
 </body>
-</html>
-    </script>
-</body>
+<footer>
+</footer>
+<script src="confi.js"></script>
+
 </html>
