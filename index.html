@@ -1,690 +1,331 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Página web</title>
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="estilos.css" />
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Construccion's Contratistas y Consultores - Calculadora Completa de Losa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a52be;
+      --secondary: #ff6b6b;
+      --accent: #4CAF50;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f0f8ff;
+      padding: 20px;
+      color: #333;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .logo {
+      font-size: 2rem;
+      color: var(--primary);
+      transition: transform 0.5s;
+    }
+    .logo:hover {
+      transform: rotate(360deg);
+    }
+    h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #1e3c8b;
+      transform: translateY(-2px);
+    }
+    #sides-container {
+      margin-top: 15px;
+    }
+    .side-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .side-input input {
+      flex: 1;
+    }
+    .results {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      padding: 8px 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    .result-item span:last-child {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .material-icon {
+      margin-right: 8px;
+      color: var(--secondary);
+    }
+    .accent-icon {
+      color: var(--accent);
+    }
+    .section-title {
+      color: var(--primary);
+      margin: 20px 0 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--secondary);
+    }
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 15px;
+      background: #ddd;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+      margin-right: 5px;
+    }
+    .tab.active {
+      background: var(--primary);
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <!-- Encabezado -->
-  <header>
-    <nav class="navbar">
-      <div class="burger">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </div>
-      <ul class="menu">
-        <li><a href="#">INICIO</a></li>
-        <li><a href="#OFERTAS">OFERTAS</a></li>
-        <li><a href="#LO-NUEVO">LO NUEVO</a></li>
-        <li><a href="#RECOMENDADOS">RECOMENDADOS</a></li>
-        <li><a href="#">SOPORTE</a></li>
-      </ul>
-      <!-- Carrito de compras -->
-      <div class="carrito-container" id="cartButton">
-        <div class="carrito-button">
-          <i class="fa-solid fa-basket-shopping"></i>
-          <span class="texto">CARRITO</span>
-          <span class="numero" id="cartNumber">0</span>
-        </div>
-        <!-- Dropdown del carrito -->
-        <div class="cart-dropdown" id="cartDropdown">
-          <div class="cart-header">
-            <h5><i class="fa-solid fa-basket-shopping"></i> Mi Carrito</h5>
-          </div>
-          <div class="cart-items" id="cartItems">
-            <div class="empty-cart">
-              <i class="fa-solid fa-basket-shopping icon-empty"></i>
-              <p>Tu carrito está vacío</p>
-            </div>
-          </div>
-          <div class="cart-footer" id="cartFooter" style="display: none;">
-            <div class="cart-total" id="cartTotal">Total: $0.00</div>
-            <button class="checkout-btn" id="checkoutBtn">
-              <i class="fas fa-credit-card"></i> Proceder al Pago
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <div class="container">
+    <header>
+      <i class="fas fa-cog logo"></i>
+      <h1>GlobalConstruccions</h1>
+    </header>
 
-  <!-- Cartel de imágenes -->
-  <div id="cartel">
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/cartel1.png" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="img/cartel2.png" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="img/cartel3.png" class="d-block w-100" alt="..." />
-        </div>
+    <div class="form-group">
+      <label for="num-sides">Número de lados de la casa:</label>
+      <input type="number" id="num-sides" min="3" max="10" value="6">
+    </div>
+
+    <button id="generate-sides">Generar Campos de Lados</button>
+
+    <div id="sides-container"></div>
+
+    <div class="form-group">
+      <label for="thickness">Espesor de la loza (cm):</label>
+      <input type="number" id="thickness" min="10" max="50" value="20">
+    </div>
+
+    <div class="form-group">
+      <label for="steel-type">Tipo de acero:</label>
+      <select id="steel-type">
+        <option value="3/8">Varilla 3/8"</option>
+        <option value="1/2">Varilla 1/2"</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="steel-spacing">Separación entre varillas (cm):</label>
+      <input type="number" id="steel-spacing" min="15" max="30" value="20">
+    </div>
+
+    <button id="calculate">Calcular Materiales</button>
+
+    <div id="results" class="results">
+      <h2 class="section-title"><i class="fas fa-calculator"></i> Resultados Generales</h2>
+      <div class="result-item">
+        <span><i class="fas fa-ruler-combined material-icon"></i>Área total:</span>
+        <span id="total-area">0 m²</span>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="result-item">
+        <span><i class="fas fa-cube material-icon"></i>Volumen de loza:</span>
+        <span id="total-volume">0 m³</span>
+      </div>
+
+      <h2 class="section-title"><i class="fas fa-concrete material-icon"></i> Concreto</h2>
+      <div class="result-item">
+        <span><i class="fas fa-pallet material-icon"></i>Cemento (bultos de 50kg):</span>
+        <span id="cement">0</span>
+      </div>
+      <div class="result-item">
+        <span><i class="fas fa-mountain material-icon"></i>Grava (m³):</span>
+        <span id="gravel">0</span>
+      </div>
+      <div class="result-item">
+        <span><i class="fas fa-water material-icon"></i>Arena (m³):</span>
+        <span id="sand">0</span>
+      </div>
+      <div class="result-item">
+        <span><i class="fas fa-tint material-icon"></i>Agua (litros):</span>
+        <span id="water">0</span>
+      </div>
+
+      <h2 class="section-title"><i class="fas fa-bolt material-icon"></i> Acero</h2>
+      <div class="result-item">
+        <span><i class="fas fa-weight-hanging material-icon"></i>Peso total acero (kg):</span>
+        <span id="steel-weight">0</span>
+      </div>
+      <div class="result-item">
+        <span><i class="fas fa-ruler-vertical material-icon"></i>Varillas requeridas:</span>
+        <span id="steel-bars">0</span>
+      </div>
+      <div class="result-item">
+        <span><i class="fas fa-cut material-icon"></i>Alambre recocido (kg):</span>
+        <span id="wire">0</span>
+      </div>
+
+      <h2 class="section-title"><i class="fas fa-tree material-icon"></i> Formaletas</h2>
+      <div class="result-item">
+        <span><i class="fas fa-border-style material-icon"></i>Área de formaleta (m²):</span>
+        <span id="formwork">0</span>
+      </div>
+      <div class="result-item">
+        <span><i class="fas fa-hammer material-icon"></i>Tablas de madera (2"x8"x12'):</span>
+        <span id="wood-planks">0</span>
+      </div>
     </div>
   </div>
 
-  <!-- Video bucle -->
-  <div id="video-container">
-    <video autoplay muted loop playsinline style="width:100%;height:auto;max-width:100%;">
-      <source src="https://dlcdnwebimgs.asus.com/files/media/2523515c-4a57-41a5-9004-67490621ae51/v1/videos/kv.mp4" type="video/mp4">
-    </video>
-  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const generateBtn = document.getElementById('generate-sides');
+      const calculateBtn = document.getElementById('calculate');
+      const sidesContainer = document.getElementById('sides-container');
+      const resultsDiv = document.getElementById('results');
 
-  <!-- Ofertas -->
-  <section class="lo-nuevo-section" id="OFERTAS">
-    <div class="container">
-      <div class="section-title">
-        <h2>🔥 OFERTAS ESPECIALES 🔥</h2>
-        <p class="lead">Descubre las mejores ofertas en tecnología gaming</p>
-      </div>
-      <div class="carousel-container">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Seccion 1 -->
-          <div class="carousel-section">
-            <!-- Oferta 1 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/1oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">ASUS ROG Strix G15</div>
-              <div class="offer-description">
-                Laptop gaming con RTX 4060, AMD Ryzen 7, 16GB RAM, perfecta para gaming profesional.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$1,299</span>
-                <span class="discount-price">$999</span>
-                <span class="discount-badge">-23%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in add-to-cart" data-name="Monitor ROG Swift 27" data-price="349">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-            <!-- Oferta 2 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/2oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Monitor ROG Swift 27</div>
-              <div class="offer-description">
-                Monitor gaming 1440p, 165Hz, G-Sync compatible, ideal para competencias.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$449</span>
-                <span class="discount-price">$349</span>
-                <span class="discount-badge">-22%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-            <!-- Oferta 3 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/3oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Teclado ROG Strix Scope</div>
-              <div class="offer-description">
-                Teclado mecánico RGB, switches Cherry MX, diseño compacto para gaming.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$159</span>
-                <span class="discount-price">$119</span>
-                <span class="discount-badge">-25%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-          </div>
-          <!-- Seccion 2 -->
-          <div class="carousel-section">
-            <!-- Oferta 4 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/4oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Mouse ROG Gladius III</div>
-              <div class="offer-description">
-                Mouse gaming inalámbrico, 19000 DPI, switches intercambiables, ergonómico.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$89</span>
-                <span class="discount-price">$69</span>
-                <span class="discount-badge">-22%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-            <!-- Oferta 5 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/5oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Auriculares ROG Delta S</div>
-              <div class="offer-description">
-                Auriculares gaming con audio Hi-Res, micrófono AI, comodidad extrema.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$199</span>
-                <span class="discount-price">$149</span>
-                <span class="discount-badge">-25%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-            <!-- Oferta 6 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/6oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Tarjeta Gráfica RTX 4070</div>
-              <div class="offer-description">
-                GPU de última generación, ray tracing, DLSS 3, rendimiento excepcional.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$599</span>
-                <span class="discount-price">$529</span>
-                <span class="discount-badge">-12%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-          </div>
-          <!-- Seccion 3 -->
-          <div class="carousel-section">
-            <!-- Oferta 7 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/7oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Control ROG Raikiri Pro</div>
-              <div class="offer-description">
-                Control gaming profesional, triggers ajustables, conectividad múltiple.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$199</span>
-                <span class="discount-price">$159</span>
-                <span class="discount-badge">-20%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-            <!-- Oferta 8 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/8oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Silla Gaming ROG Chariot</div>
-              <div class="offer-description">
-                Silla ergonómica premium, soporte lumbar, materiales de alta calidad.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$499</span>
-                <span class="discount-price">$399</span>
-                <span class="discount-badge">-20%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-            <!-- Oferta 9 -->
-            <div class="offer-card">
-              <div class="offer-image">
-                <img src="img/9oferta.png" style="width: 200px; height: auto;">
-              </div>
-              <div class="offer-title">Router ROG Rapture AX6000</div>
-              <div class="offer-description">
-                Router gaming WiFi 6, baja latencia, optimización para juegos online.
-              </div>
-              <div class="offer-price">
-                <span class="original-price">$399</span>
-                <span class="discount-price">$299</span>
-                <span class="discount-badge">-25%</span>
-              </div>
-              <button class="cta-button animate-on-scroll scale-in">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Navegación -->
-      <div class="carousel-nav">
-        <button class="nav-button" id="prevBtn">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="nav-indicators" id="indicators">
-          <div class="nav-dot active" data-section="0"></div>
-          <div class="nav-dot" data-section="1"></div>
-          <div class="nav-dot" data-section="2"></div>
-        </div>
-        <button class="nav-button" id="nextBtn">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </section>
+      // Generar inputs para cada lado
+      generateBtn.addEventListener('click', () => {
+        const numSides = parseInt(document.getElementById('num-sides').value);
+        sidesContainer.innerHTML = '';
 
-  <!-- Productos en vista -->
-  <section class="lo-nuevo-section" id="PRODUCTOS">
-    <div class="container">
-      <div class="section-title">
-        <h2>💻 PRODUCTOS DESTACADOS 💻</h2>
-        <p class="lead">Descubre nuestra selección de productos gaming premium</p>
-      </div>
-      <div class="container-items">
-        <!-- Producto 1 -->
-        <div class="item">
-          <div class="offer-card">
-            <div class="offer-image" style="height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-              <img src="img/producto1.png" alt="ROG Astral GeForce RTX™ 5080" style="width: 200px; height: auto; max-height: 200px; object-fit: contain;">
-            </div>
-            <div class="offer-title" style="margin-top: 10px;">ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition</div>
-            <div class="offer-description">
-              Tarjeta gráfica de última generación con tecnología GDDR7 para el máximo rendimiento gaming.
-            </div>
-            <div class="offer-price">
-              <span class="discount-price">$899</span>
-            </div>
-            <button class="cta-button animate-on-scroll scale-in" data-product-name="ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition">
-              <i class="fas fa-shopping-cart"></i> Comprar Ahora
-            </button>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="item">
-          <div class="offer-card">
-            <div class="offer-image" style="height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-              <img src="img/producto2.png" alt="ROG Astral GeForce RTX™ 5080" style="width: 200px; height: auto; max-height: 200px; object-fit: contain;">
-            </div>
-            <div class="offer-title" style="margin-top: 10px;">ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition</div>
-            <div class="offer-description">
-              Potencia extrema para gaming 4K y ray tracing avanzado con arquitectura de nueva generación.
-            </div>
-            <div class="offer-price">
-              <span class="discount-price">$899</span>
-            </div>
-            <button class="cta-button animate-on-scroll scale-in" data-product-name="ROG Astral GeForce RTX™ 5080 16GB GDDR7 OC Edition">
-              <i class="fas fa-shopping-cart"></i> Comprar Ahora
-            </button>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="item">
-          <div class="offer-card">
-            <div class="offer-image" style="height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
-              <img src="img/producto3.png" alt="ROG Strix GeForce RTX™ 4060 Ti" style="width: 200px; height: auto; max-height: 200px; object-fit: contain;">
-            </div>
-            <div class="offer-title" style="margin-top: 10px;">ROG Strix GeForce RTX™ 4060 Ti 8GB GDDR6 OC Edition</div>
-            <div class="offer-description">
-              Perfecta para gaming 1440p con excelente relación precio-rendimiento y tecnología RTX.
-            </div>
-            <div class="offer-price">
-              <span class="discount-price">$459</span>
-            </div>
-            <button class="cta-button animate-on-scroll scale-in" data-product-name="ROG Strix GeForce RTX™ 4060 Ti 8GB GDDR6 OC Edition">
-              <i class="fas fa-shopping-cart"></i> Comprar Ahora
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        for (let i = 0; i < numSides; i++) {
+          const sideDiv = document.createElement('div');
+          sideDiv.className = 'side-input';
+          sideDiv.innerHTML = `
+            <label>Lado ${i + 1} (m):</label>
+            <input type="number" class="side-length" min="1" step="0.1" placeholder="Ej: 5.2" required>
+          `;
+          sidesContainer.appendChild(sideDiv);
+        }
+      });
 
-  <!-- Sección Lo Nuevo -->
-  <section class="lo-nuevo-section" id="LO-NUEVO">
-    <div class="container">
-      <!-- Título de la sección -->
-      <div class="section-title animate-on-scroll fade-in-up">
-        <h2>LO NUEVO</h2>
-        <p>Descubre la última tecnología en laptops gaming</p>
-      </div>
-      <!-- Contenido principal -->
-      <div class="main-content">
-        <!-- Laptop container -->
-        <div class="laptop-container animate-on-scroll slide-in-left">
-          <div class="laptop-image">
-            <div class="laptop-mockup">
-              <div class="laptop-screen">
-                <img src="img/LoNuevo.png" alt="producto" />
-              </div>
-              <div class="laptop-keyboard">
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-                <div class="key"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Info container -->
-        <div class="info-container animate-on-scroll slide-in-right">
-          <h3 class="product-title">ASUS ROG Flow Z13</h3>
-          <p class="product-subtitle">Gaming Tablet Revolucionaria</p>
-          <p class="product-description">
-            La perfecta fusión entre portabilidad extrema y rendimiento gaming profesional. 
-            Diseñada para gamers que no comprometen la potencia por la movilidad.
-          </p>
-          <!-- Grid de características -->
-          <div class="features-grid">
-            <div class="feature-card animate-on-scroll fade-in-up" data-delay="200">
-              <div class="feature-icon">
-                <i class="fas fa-microchip"></i>
-              </div>
-              <div class="feature-title">Intel Core i9</div>
-              <div class="feature-desc">Procesador de 12va gen</div>
-            </div>
-            <div class="feature-card animate-on-scroll fade-in-up" data-delay="400">
-              <div class="feature-icon">
-                <i class="fas fa-memory"></i>
-              </div>
-              <div class="feature-title">32GB LPDDR5</div>
-              <div class="feature-desc">RAM ultrarrápida</div>
-            </div>
-            <div class="feature-card animate-on-scroll fade-in-up" data-delay="600">
-              <div class="feature-icon">
-                <i class="fas fa-battery-full"></i>
-              </div>
-              <div class="feature-title">70Wh Battery</div>
-              <div class="feature-desc">10+ horas de uso</div>
-            </div>
-            <div class="feature-card animate-on-scroll fade-in-up" data-delay="800">
-              <div class="feature-icon">
-                <i class="fas fa-desktop"></i>
-              </div>
-              <div class="feature-title">13" 4K Touch</div>
-              <div class="feature-desc">Pantalla OLED HDR</div>
-            </div>
-          </div>
-          <!-- Botón CTA -->
-          <a href="#" class="cta-button animate-on-scroll scale-in">
-            <i class="fas fa-shopping-cart"></i>
-            Ver Detalles
-          </a>
-        </div>
-      </div>
-      <!-- Especificaciones técnicas -->
-      <div class="specs-section animate-on-scroll fade-in-up">
-        <h3 class="specs-title">Especificaciones Técnicas</h3>
-        <div class="specs-grid">
-          <div class="spec-item animate-on-scroll slide-in-left" data-delay="100">
-            <span class="spec-label">Procesador</span>
-            <span class="spec-value">Intel Core i9-12900H</span>
-          </div>
-          <div class="spec-item animate-on-scroll slide-in-left" data-delay="200">
-            <span class="spec-label">Gráficos</span>
-            <span class="spec-value">Intel Iris Xe Graphics</span>
-          </div>
-          <div class="spec-item animate-on-scroll slide-in-left" data-delay="300">
-            <span class="spec-label">Almacenamiento</span>
-            <span class="spec-value">1TB PCIe 4.0 SSD</span>
-          </div>
-          <div class="spec-item animate-on-scroll slide-in-left" data-delay="400">
-            <span class="spec-label">Conectividad</span>
-            <span class="spec-value">Wi-Fi 6E, Thunderbolt 4</span>
-          </div>
-          <div class="spec-item animate-on-scroll slide-in-left" data-delay="500">
-            <span class="spec-label">Peso</span>
-            <span class="spec-value">1.18 kg</span>
-          </div>
-          <div class="spec-item animate-on-scroll slide-in-left" data-delay="600">
-            <span class="spec-label">Sistema</span>
-            <span class="spec-value">Windows 11 Pro</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      // Calcular todos los materiales
+      calculateBtn.addEventListener('click', () => {
+        const sideInputs = document.querySelectorAll('.side-length');
+        const thickness = parseFloat(document.getElementById('thickness').value) / 100; // Convertir cm a m
+        const steelType = document.getElementById('steel-type').value;
+        const steelSpacing = parseFloat(document.getElementById('steel-spacing').value);
 
-  <!-- Anuncio que sale -->
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
-    style="position: fixed; bottom: 20px; right: 20px;">
-    <div class="toast-header">
-      <img src="https://media.tenor.com/MojW2yr1vFoAAAAM/money-money-money.gif" alt="Icono"
-        style="width: 20px; height: 20px; margin-right: 10px;">
-      <strong class="me-auto">Gracias por su compra</strong>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Se añadió al carrito su compra.
-    </div>
-  </div>
+        let sides = [];
+        sideInputs.forEach(input => {
+          if (input.value) sides.push(parseFloat(input.value));
+        });
 
-  <!-- Sección Recommended Products -->
-  <section class="lo-nuevo-section" id="RECOMENDADOS"> 
-    <div class="container"> 
-      <div class="section-title animate-on-scroll fade-in-up"> 
-        <h2>PRODUCTOS RECOMENDADOS</h2>
-        <p>Los mejores productos recomendados para ti</p>
-      </div>
-      <div class="products-grid">
-        <!-- Producto 1 -->
-        <div class="feature-card animate-on-scroll scale-in" style="display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS1.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:100%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG Flow X13 (2023) GV302</h3>
-          <p class="product-specs">
-            AMD Radeon™ 780M Laptop GPU<br>
-            Windows 11 Home<br>
-            AMD® Ryzen™ 9
-          </p>
-          <div class="product-price">Desde $1,299</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="feature-card animate-on-scroll scale-in" style="animation-delay: 0.2s; display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS2.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:100%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG Flow X16 (2023) GV601</h3>
-          <p class="product-specs">
-            GeForce RTX™ 4070 Laptop GPU<br>
-            Windows 11 Pro<br>
-            13th Gen Intel Core™ i9-13900H
-          </p>
-          <div class="product-price">Desde $1,899</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="feature-card animate-on-scroll scale-in" style="animation-delay: 0.4s; display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS3.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:100%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG Flow Z13-ACRNM RMT02 GZ301VIC</h3>
-          <p class="product-specs">
-            GeForce RTX™ 4060 Laptop GPU<br>
-            Windows 11 Pro<br>
-            13th Gen Intel Core™ i9-13900H
-          </p>
-          <div class="product-price">Desde $2,299</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-        <!-- Producto 4 Main -->
-        <div class="feature-card animate-on-scroll scale-in" style="animation-delay: 0.6s; display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS4.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:100%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG Zephyrus G14 AW SE</h3>
-          <p class="product-specs">
-            Windows™ 10 Pro<br>
-            AMD Ryzen™ 9 5900HS<br>
-            Designed in Collaboration with Alan Walker
-          </p>
-          <div class="product-price">Desde $1,699</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        if (sides.length < 3) {
+          alert('¡Necesitas al menos 3 lados para calcular!');
+          return;
+        }
 
-  <!-- Separador -->
-  <div class="section-separator"></div>
+        // 1. Cálculo del área y volumen
+        const area = calculateIrregularPolygonArea(sides);
+        const volume = area * thickness;
+        const perimeter = sides.reduce((a, b) => a + b, 0);
 
-  <!-- Sección Related Products -->
-  <section class="lo-nuevo-section">
-    <div class="container">
-      <div class="section-title animate-on-scroll fade-in-up">
-        <h2>PRODUCTOS RELACIONADOS</h2>
-        <p>Productos relacionados que podrían interesarte</p>
-      </div>
-      <div class="products-grid">
-        <!-- Producto 1 -->
-        <div class="feature-card animate-on-scroll scale-in" style="display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS5.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:100%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG Ally (2023) RC71L</h3>
-          <p class="product-specs">
-            AMD Radeon™ Graphics<br>
-            Windows 11 Home<br>
-            Up to AMD Ryzen™ Z1 Extreme Processor
-          </p>
-          <div class="product-price">Desde $699</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-        <!-- Producto 2 -->
-        <div class="feature-card animate-on-scroll scale-in" style="animation-delay: 0.2s; display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS6.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:100%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG Ally X (2024) RC72LA</h3>
-          <p class="product-specs">
-            AMD Radeon™ Graphics<br>
-            Windows 11 Home<br>
-            AMD Ryzen™ Z1 Extreme Processor
-          </p>
-          <div class="product-price">Desde $799</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="feature-card animate-on-scroll scale-in" style="animation-delay: 0.4s; display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS7.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:80%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG XG Mobile (2025)</h3>
-          <p class="product-specs">
-            Up to NVIDIA®GeForce RTX™ 5090 Laptop GPU<br>
-            Thunderbolt™ 5 type-C/Power Delivery 3.1 (37W)<br>
-            USB 3.2 Gen2 Type-A
-          </p>
-          <div class="product-price">Desde $2,999</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-        <!-- Producto 4 -->
-        <div class="feature-card animate-on-scroll scale-in" style="animation-delay: 0.6s; display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="product-image">
-            <div class="laptop-screen" style="width:100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-              <img src="img/RECOMENDADOS8.png" alt="producto" style="max-width:100%; max-height:100%; object-fit: contain; width:80%; height:auto;" />
-            </div>
-          </div>
-          <h3 class="product-name">ROG Strix GA15 G15</h3>
-          <p class="product-specs">
-            GeForce RTX™ 3070<br>
-            Windows 10 Pro<br>
-            AMD® Ryzen™ 7 5800 Series
-          </p>
-          <div class="product-price">Desde $1,499</div>
-          <div style="flex:1"></div>
-          <div style="display: flex; justify-content: center; margin-top: auto;">
-            <a href="#" class="cta-button">
-              🛒 Ver Detalles
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        // 2. Materiales de concreto (proporciones estándar 1:2:2:0.8)
+        const cementBags = Math.ceil(volume * 8.5); // 8.5 bultos/m³ (para mezcla 1:2:2)
+        const gravel = (volume * 0.7).toFixed(2);   // 0.7 m³ grava/m³
+        const sand = (volume * 0.7).toFixed(2);    // 0.7 m³ arena/m³
+        const water = Math.ceil(volume * 180);     // 180 litros/m³
 
-  <script src="confi.js"></script>
+        // 3. Cálculo de acero (6% del volumen en kg + varillas)
+        const steelWeight = Math.ceil(volume * 70); // 70 kg/m³
+        const barsPerMeter = Math.ceil(100 / steelSpacing); // Varillas por metro lineal
+        const steelBars = Math.ceil(area * barsPerMeter * 2); // 2 direcciones (parrilla)
+        const wireWeight = Math.ceil(area * 0.5); // 0.5 kg/m² de alambre
+
+        // 4. Formaletas (área de contacto lateral)
+        const formworkArea = (perimeter * thickness).toFixed(2);
+        const woodPlanks = Math.ceil(formworkArea * 0.5); // 0.5 tablas/m²
+
+        // Mostrar resultados
+        document.getElementById('total-area').textContent = `${area.toFixed(2)} m²`;
+        document.getElementById('total-volume').textContent = `${volume.toFixed(2)} m³`;
+        
+        // Concreto
+        document.getElementById('cement').textContent = cementBags;
+        document.getElementById('gravel').textContent = gravel;
+        document.getElementById('sand').textContent = sand;
+        document.getElementById('water').textContent = water;
+        
+        // Acero
+        document.getElementById('steel-weight').textContent = steelWeight;
+        document.getElementById('steel-bars').textContent = `${steelBars} (${steelType}")`;
+        document.getElementById('wire').textContent = wireWeight;
+        
+        // Formaletas
+        document.getElementById('formwork').textContent = formworkArea;
+        document.getElementById('wood-planks').textContent = woodPlanks;
+
+        resultsDiv.style.display = 'block';
+      });
+
+      // Función para calcular área de polígono irregular (aproximación)
+      function calculateIrregularPolygonArea(sides) {
+        // Método simplificado para polígonos convexos
+        const avgSide = sides.reduce((a, b) => a + b, 0) / sides.length;
+        return (sides.length * avgSide * avgSide) / (4 * Math.tan(Math.PI / sides.length));
+      }
+    });
+  </script>
 </body>
-<footer>
-</footer>
 </html>
